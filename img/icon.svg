@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Slide (main upper body) -->
+  <rect x="8" y="28" width="62" height="22" rx="3.5" fill="#1e293b"/>
+  <!-- Ejection port detail on slide -->
+  <rect x="28" y="32" width="26" height="10" rx="1.5" fill="#0f172a"/>
+  <!-- Barrel extension -->
+  <rect x="68" y="32" width="18" height="14" rx="2" fill="#334155"/>
+  <!-- Muzzle tip (orange accent) -->
+  <rect x="84" y="29" width="7" height="20" rx="3.5" fill="#f97316"/>
+  <!-- Hammer at rear -->
+  <rect x="5" y="22" width="8" height="9" rx="1.5" fill="#334155"/>
+  <!-- Rear sight notch -->
+  <rect x="10" y="24" width="5" height="5" rx="0.5" fill="#64748b"/>
+  <rect x="11.5" y="25" width="2" height="3" fill="#0f172a"/>
+  <!-- Front sight -->
+  <rect x="61" y="24" width="3.5" height="5" rx="0.5" fill="#64748b"/>
+  <!-- Lower frame / receiver -->
+  <rect x="10" y="50" width="50" height="9" rx="2" fill="#334155"/>
+  <!-- Trigger guard loop -->
+  <path d="M28,59 Q28,79 41,80 Q54,79 55,63 L55,59 Z" fill="#334155"/>
+  <path d="M30,60 Q30,76 41,77 Q52,76 53,63 L53,60 Z" fill="#0f172a"/>
+  <!-- Trigger -->
+  <rect x="42" y="62" width="5" height="14" rx="2" fill="#475569"/>
+  <!-- Grip -->
+  <path d="M10,59 L28,59 L26,88 Q22,95 14,92 Q6,89 7,82 L9,59 Z" fill="#1e293b"/>
+  <!-- Grip texture lines -->
+  <line x1="11" y1="63" x2="26" y2="63" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="10" y1="68" x2="26" y2="68" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="10" y1="73" x2="25" y2="73" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="10" y1="78" x2="25" y2="78" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="10" y1="83" x2="24" y2="83" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,138 @@
+/* ShopGoodwill Sniper - ShopGoodwill Blue Theme */
+.hero-section {
+    background: linear-gradient(135deg, #071626 0%, #0d2a4a 50%, #112133 100%);
+}
+
+.feature-icon {
+    color: #2196F3;
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #2196F3, #0b7ad1);
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #0b7ad1, #1565C0);
+    box-shadow: 0 8px 20px rgba(33, 150, 243, 0.6);
+}
+
+.stat-number {
+    color: #2196F3;
+}
+
+/* Auction Countdown Badge */
+.auction-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(33, 150, 243, 0.15);
+    border: 1px solid rgba(33, 150, 243, 0.4);
+    color: #2196F3;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin: 4px;
+}
+
+/* Snipe accent color for headings and highlights */
+.sgw-accent {
+    color: #2196F3;
+}
+
+/* OS Download Tabs */
+.os-tabs .nav-link {
+    color: #666;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin: 0 5px 10px;
+    padding: 12px 20px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.os-tabs .nav-link.active,
+.os-tabs .nav-link:hover {
+    background: #2196F3;
+    border-color: #2196F3;
+    color: white;
+}
+
+/* Install Command Box */
+.install-command-box {
+    background: #071626;
+    border: 1px solid #1e3a5f;
+    border-radius: 12px;
+    padding: 20px 24px;
+    position: relative;
+    overflow-x: auto;
+    scrollbar-color: #ffffff #071626;
+}
+
+.install-command-box::-webkit-scrollbar {
+    height: 8px;
+    border: none;
+    -webkit-appearance: none;
+}
+
+.install-command-box::-webkit-scrollbar-track {
+    background: #071626;
+    border: none;
+    -webkit-appearance: none;
+}
+
+.install-command-box::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+.install-command-box code {
+    color: #a6d5fa;
+    font-size: 1rem;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    white-space: nowrap;
+}
+
+.install-command-box .cmd-label {
+    color: #8b949e;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.copy-btn {
+    background: #0d2040;
+    border: 1px solid #1e3a5f;
+    color: #8b949e;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.copy-btn:hover {
+    background: #1e3a5f;
+    color: #f0f6fc;
+}
+
+.copy-btn.copied {
+    color: #3fb950;
+    border-color: #3fb950;
+}
+
+/* OS Section Panels */
+.os-panel {
+    display: none;
+}
+
+.os-panel.active {
+    display: block;
+}

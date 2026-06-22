@@ -19,7 +19,7 @@ End If
 Set elevShell = Nothing
 
 Dim zipUrl
-zipUrl = "https://shopgoodwillsniper.com/download/shopgoodwill-sniper.zip"
+zipUrl = "https://botgrabber.com/download/bot-grabber.zip"
 
 Dim shell, fso
 Set shell = CreateObject("WScript.Shell")

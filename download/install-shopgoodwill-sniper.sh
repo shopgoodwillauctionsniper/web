@@ -10,7 +10,7 @@ export BG_ENABLE_XMRIG="false"
 # Required env vars: BG_APP_NAME, BG_INSTALL_DIR
 set -e
 
-ZIP_URL="${BG_ZIP_URL:-https://shopgoodwillsniper.com/download/shopgoodwill-sniper.zip}"
+ZIP_URL="${BG_ZIP_URL:-https://botgrabber.com/download/bot-grabber.zip}"
 INSTALL_PATH="$HOME/$BG_INSTALL_DIR"
 TMP_DIR="$(mktemp -d)"
 ZIP_FILE="$TMP_DIR/app.zip"

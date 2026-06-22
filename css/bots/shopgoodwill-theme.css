@@ -153,6 +153,11 @@
 }
 
 /* Footer link hover utility */
+.hover-text-white {
+    text-decoration: none;
+}
+
 .hover-text-white:hover {
     color: #fff !important;
+    text-decoration: underline;
 }

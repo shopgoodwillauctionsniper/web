@@ -41,7 +41,7 @@
     <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
     <link rel="canonical" href="https://shopgoodwillsniper.com">
-    <link rel="preload" as="image" href="/img/bots/shopgoodwill-sniper.png">
+    <link rel="preload" as="image" href="/img/bots/shopgoodwill-sniper.png" fetchpriority="high">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -254,9 +254,10 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="rounded-4 shadow-lg overflow-hidden"
-                        style="background: rgba(0,0,0,0.4); padding: 15px; display:flex; align-items:center; justify-content:center;">
+                        style="background: rgba(0,0,0,0.4); padding: 15px; display:flex; align-items:center; justify-content:center; min-height:300px;">
                         <img src="/img/bots/shopgoodwill-sniper.png" class="d-block w-100 rounded-3 lightbox-img"
                             alt="ShopGoodwill Sniper Screenshot" style="max-height: 500px; object-fit: contain;"
+                            fetchpriority="high" decoding="async"
                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div
                             style="display:none; flex-direction:column; align-items:center; justify-content:center; color:#8b949e; min-height:300px; text-align:center; padding:40px;">

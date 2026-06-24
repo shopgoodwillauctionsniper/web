@@ -279,8 +279,6 @@
                     <h2 class="display-5 fw-bold text-center mb-2">Download ShopGoodwill Sniper</h2>
                     <p class="text-center text-muted mb-1">ShopGoodwill Sniper is a desktop app for Windows, Mac
                         &amp; Linux. No upfront cost — you pay only when you win an auction.</p>
-                    <p class="text-center text-muted mb-1">Current Version: <span id="sgw-app-version"
-                            style="font-weight:600;">Loading...</span></p>
                     <p class="text-center text-muted mb-4">We've automatically detected your operating system — select
                         yours below.</p>
 
@@ -320,7 +318,8 @@
                                     <code
                                         id="cmd-windows">curl -fsSL https://shopgoodwillsniper.com/download/install-shopgoodwill-sniper.vbs -o "%TEMP%\sg.vbs" && wscript "%TEMP%\sg.vbs"</code>
                                 </div>
-                                <p class="text-muted small text-center">Windows 10 or higher &bull; 64-bit</p>
+                                <p class="text-muted small text-center"><span id="windows-version"></span>Windows 10 or
+                                    higher &bull; 64-bit</p>
                             </div>
                         </div>
                     </div>
@@ -338,7 +337,8 @@
                                     <code
                                         id="cmd-mac">curl -fsSL https://shopgoodwillsniper.com/download/install-shopgoodwill-sniper.sh | bash</code>
                                 </div>
-                                <p class="text-muted small text-center">macOS 11 Big Sur or higher &bull; Intel &amp;
+                                <p class="text-muted small text-center"><span id="macos-version"></span>macOS 11 Big Sur
+                                    or higher &bull; Intel &amp;
                                     Apple Silicon
                                 </p>
                             </div>
@@ -359,6 +359,7 @@
                                     <code
                                         id="cmd-linux">curl -fsSL https://shopgoodwillsniper.com/download/install-shopgoodwill-sniper.sh | bash</code>
                                 </div>
+                                <p class="text-muted small text-center"><span id="linux-version"></span>Linux 64-bit</p>
                             </div>
                         </div>
                     </div>
@@ -1027,67 +1028,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/image-lightbox.js"></script>
-    <script>
-        function selectOS(os) {
-            document.querySelectorAll('.os-panel').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('#osTabs .nav-link').forEach(b => b.classList.remove('active'));
-            var panel = document.getElementById('os-' + os);
-            var tab = document.getElementById('tab-' + os);
-            if (panel) panel.classList.add('active');
-            if (tab) tab.classList.add('active');
-        }
-
-        function copyCmd(id, btn) {
-            var el = document.getElementById(id);
-            if (!el) return;
-            navigator.clipboard.writeText(el.textContent.trim()).then(function () {
-                btn.textContent = 'Copied!';
-                btn.classList.add('copied');
-                setTimeout(function () {
-                    btn.textContent = 'Copy';
-                    btn.classList.remove('copied');
-                }, 2000);
-            }).catch(function () {
-                var range = document.createRange();
-                range.selectNode(el);
-                window.getSelection().removeAllRanges();
-                window.getSelection().addRange(range);
-                document.execCommand('copy');
-                window.getSelection().removeAllRanges();
-                btn.textContent = 'Copied!';
-                btn.classList.add('copied');
-                setTimeout(function () {
-                    btn.textContent = 'Copy';
-                    btn.classList.remove('copied');
-                }, 2000);
-            });
-        }
-
-        (function detectOS() {
-            var ua = (navigator.userAgent || '').toLowerCase();
-            var platform = (navigator.platform || '').toLowerCase();
-            var os = 'windows';
-            if (/mac|iphone|ipad|ipod/.test(platform) || /macintosh/.test(ua)) {
-                os = 'mac';
-            } else if (/linux/.test(platform) || /linux/.test(ua)) {
-                os = 'linux';
-            }
-            selectOS(os);
-        })();
-    </script>
-    <script>
-        // Fetch current version from local download folder
-        fetch('/download/version.txt')
-            .then(r => r.ok ? r.text() : Promise.reject())
-            .then(v => {
-                const el = document.getElementById('sgw-app-version');
-                if (el) el.textContent = 'v' + v.trim();
-            })
-            .catch(() => {
-                const el = document.getElementById('sgw-app-version');
-                if (el) el.textContent = 'See download';
-            });
-    </script>
+    <script src="/js/snipeable-page.js"></script>
 </body>
 
 </html>

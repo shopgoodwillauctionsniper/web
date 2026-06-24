@@ -369,6 +369,12 @@ body {
     box-shadow: 0 0 70px rgba(33, 150, 243, .25);
 }
 
+/* force zoom-in cursor on every child so the whole area feels clickable */
+#heroDemoWrap,
+#heroDemoWrap * {
+    cursor: zoom-in !important;
+}
+
 /* ── Snipe Demo Card (animated UI layer) ───────────────────── */
 .snipe-demo-card {
     background: rgba(9, 22, 44, .88);

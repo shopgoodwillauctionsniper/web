@@ -1809,7 +1809,12 @@ body {
     }
 
     .hero-section {
-        padding-bottom: 72px !important;
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .hero-copy {
+        gap: 18px;
     }
 
     /* ── Root-cause fix: Bootstrap row gutter has negative margins which

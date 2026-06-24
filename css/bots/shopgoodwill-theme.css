@@ -279,6 +279,12 @@ body {
     text-align: center;
 }
 
+.hero-copy {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .hero-title {
     font-size: clamp(2.3rem, 5vw, 3.75rem);
     font-weight: 900;
@@ -387,7 +393,7 @@ body {
     opacity: 1 !important;
     will-change: auto;
     box-shadow: none;
-    align-self: flex-start !important;
+    align-self: center !important;
     /* Zero all margin/padding — Bootstrap g-5 gutter injects margin-top: 48px */
     padding: 0 !important;
     margin: 0 !important;

@@ -1318,10 +1318,17 @@ body {
     overflow: visible;
     box-shadow: none;
     border: none !important;
+    width: 100%;
     min-width: 560px;
     margin-bottom: 0;
+    table-layout: fixed;
     border-collapse: separate !important;
     border-spacing: 0 !important;
+}
+
+.comparison-table th,
+.comparison-table td {
+    width: 25%;
 }
 
 .comparison-table thead {
@@ -1863,6 +1870,7 @@ body {
         width: 100% !important;
         max-width: 100% !important;
         min-width: 0 !important;
+        margin-top: 18px !important;
         box-sizing: border-box !important;
         overflow: hidden !important;
     }

@@ -366,9 +366,9 @@ body {
     opacity: 1 !important;
     will-change: box-shadow;
     box-shadow: var(--sh-glow);
-    /* lock to content height so Bootstrap row-stretch can't make it taller */
+    /* shrink-wrap to card + padding — prevents row-stretch adding phantom height */
     height: fit-content !important;
-    align-self: center !important;
+    align-self: flex-start !important;
     padding: 48px 32px !important;
     display: flex;
     align-items: center;
@@ -398,8 +398,6 @@ body {
     overflow: hidden;
     max-width: 450px;
     margin: 0 auto;
-    /* fixed height so internal animation never causes layout shift */
-    min-height: 320px;
 }
 
 .snipe-demo-card::before {
@@ -1683,6 +1681,7 @@ body {
     .hero-section {
         padding: 80px 0 60px;
         min-height: auto;
+        overflow-x: hidden;
     }
 
     .snipe-demo-card {
@@ -1729,19 +1728,35 @@ body {
         display: inline-flex;
     }
 
-    /* hero demo wrapper: fit full width, reduce padding */
+    /* hero demo wrapper: shrink to viewport width */
     #heroDemoWrap {
         width: 100% !important;
-        padding: 28px 16px !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        padding: 24px 14px !important;
         box-sizing: border-box !important;
+        overflow: hidden !important;
+        align-self: stretch !important;
     }
 
     .snipe-demo-card {
-        max-width: 100% !important;
         width: 100% !important;
-        margin-top: 0 !important;
-        padding: 18px !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 16px !important;
         min-height: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    .demo-item-name {
+        max-width: 160px;
+        font-size: .88rem;
+    }
+
+    .demo-countdown-ring {
+        min-width: 130px;
+        padding: 10px 18px;
     }
 
     .demo-countdown-display {

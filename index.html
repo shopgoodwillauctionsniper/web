@@ -25,12 +25,12 @@
     <meta name="twitter:title" content="ShopGoodwill Sniper | ShopGoodwill Auction Sniper | Goodwill Auction Bot">
     <meta name="twitter:description"
         content="ShopGoodwill Sniper places last-second bids on ShopGoodwill.com auctions automatically. Pay only when you win — 2% success fee by default, or 0% (no success fee) with a monthly plan. Windows, Mac &amp; Linux.">
-    <meta name="twitter:image" content="https://shopgoodwillsniper.com/images/software/shopgoodwill-sniper.png">
+    <meta name="twitter:image" content="https://shopgoodwillsniper.com/img/bots/shopgoodwill-sniper.png">
 
     <meta property="og:title" content="ShopGoodwill Sniper | ShopGoodwill Auction Sniper | Goodwill Auction Bot">
     <meta property="og:description"
         content="ShopGoodwill Sniper places last-second bids on ShopGoodwill.com auctions automatically. Pay only when you win — 2% success fee by default, or 0% (no success fee) with a monthly plan. Windows, Mac &amp; Linux.">
-    <meta property="og:image" content="https://shopgoodwillsniper.com/images/software/shopgoodwill-sniper.png">
+    <meta property="og:image" content="https://shopgoodwillsniper.com/img/bots/shopgoodwill-sniper.png">
     <meta property="og:url" content="https://shopgoodwillsniper.com">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="ShopGoodwill Sniper">
@@ -196,9 +196,12 @@
 }
 </script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/css/bot-pages.css">
     <link rel="stylesheet" href="/css/bots/shopgoodwill-theme.css">
     <!-- Meta Pixel Code -->
     <script>!function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1454446782616128'); fbq('track', 'PageView');</script>
@@ -207,312 +210,268 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+
+    <!-- ═══════════════════════════════════════════════════════
+         NAVBAR
+         ═══════════════════════════════════════════════════════ -->
+    <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand fs-4 fw-bold" href="/">
-                ShopGoodwill Sniper 🔫
+            <a class="navbar-brand" href="/" aria-label="ShopGoodwill Sniper Home">
+                <span aria-hidden="true">🎯</span> ShopGoodwill Sniper
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <!-- <li class="nav-item"><a class="nav-link" href="/software"><i
-                                class="bi bi-laptop me-1"></i>Software</a></li> -->
-                    <li class="nav-item"><a class="nav-link" href="https://botgrabber.com/user" target="_blank"
-                            rel="noopener"><i class="bi bi-person-circle me-1"></i>User</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" href="/referral-program#affiliate-program-section"><i
-                                class="bi bi-gift me-1"></i>Affiliate Program</a></li> -->
-                    <!-- <li class="nav-item"><a class="nav-link" href="/help"><i
-                                class="bi bi-question-circle me-1"></i>Help</a></li> -->
+                <ul class="navbar-nav mx-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                 </ul>
+                <div class="d-flex align-items-center gap-2 mt-2 mt-lg-0">
+                    <a href="https://botgrabber.com/user" target="_blank" rel="noopener" class="nav-user-link">
+                        <i class="bi bi-person-circle"></i> Account
+                    </a>
+                    <a href="#download" class="nav-cta-btn">
+                        <i class="bi bi-download"></i> Download
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section text-center">
-        <div class="container position-relative">
-            <div class="row align-items-center">
-                <div class="col-lg-6 text-center mb-3 mb-lg-0">
-                    <div class="mb-3" style="margin-top: 4px;">
+    <!-- ═══════════════════════════════════════════════════════
+         HERO
+         ═══════════════════════════════════════════════════════ -->
+    <section class="hero-section">
+        <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+        <div class="container hero-content">
+            <div class="row align-items-center g-5">
+
+                <!-- Left: Copy -->
+                <div class="col-lg-6">
+                    <div class="mb-3">
                         <span class="platform-badge"><i class="bi bi-windows me-1"></i>Windows</span>
                         <span class="platform-badge"><i class="bi bi-apple me-1"></i>macOS</span>
                         <span class="platform-badge"><i class="bi bi-ubuntu me-1"></i>Linux</span>
                     </div>
-                    <h1 class="display-3 fw-bold mb-3">ShopGoodwill Sniper</h1>
-                    <h2 class="h2 mb-3" style="color: #a6d5fa;">ShopGoodwill Auction Sniper</h2>
-                    <h3 class="h4 mb-4 text-white-50">Goodwill Auction Bot</h3>
-                    <p class="lead mb-5">Automatically place winning bids on ShopGoodwill.com auctions at the last
+                    <h1 class="hero-title">ShopGoodwill<br>Sniper</h1>
+                    <h2 class="hero-subtitle">ShopGoodwill Auction Sniper</h2>
+                    <p class="hero-tagline">Goodwill Auction Bot</p>
+                    <p class="hero-desc">Automatically place winning bids on ShopGoodwill.com auctions at the last
                         second — win more auctions at the lowest possible price. Pay only when you win.</p>
-                    <a href="#download" class="btn download-btn">
-                        <i class="bi bi-download me-2"></i>Download &amp; Start Sniping
+                    <a href="#download" class="download-btn download-btn-hero">
+                        <i class="bi bi-download"></i>Download &amp; Start Sniping
                     </a>
-                    <p class="mt-4 text-white-50"><small><i class="bi bi-laptop me-2"></i>Pay Only When You Win &bull;
-                            Windows,
-                            Mac &amp; Linux</small></p>
+                    <p class="hero-note"><i class="bi bi-laptop me-1"></i>Pay Only When You Win &bull; Windows, Mac
+                        &amp; Linux</p>
                 </div>
-                <div class="col-lg-6">
-                    <div class="rounded-4 shadow-lg overflow-hidden"
-                        style="background: rgba(0,0,0,0.4); padding: 15px; display:flex; align-items:center; justify-content:center; min-height:300px;">
-                        <img src="/img/bots/shopgoodwill-sniper.png" class="d-block w-100 rounded-3 lightbox-img"
-                            alt="ShopGoodwill Sniper Screenshot" style="max-height: 500px; object-fit: contain;"
-                            fetchpriority="high" decoding="async"
-                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div
-                            style="display:none; flex-direction:column; align-items:center; justify-content:center; color:#8b949e; min-height:300px; text-align:center; padding:40px;">
-                            <i class="bi bi-trophy-fill" style="font-size:5rem; color:#2196F3; margin-bottom:20px;"></i>
-                            <p class="h5 mb-2" style="color:#a6d5fa;">ShopGoodwill Sniper</p>
-                            <p style="color:#8b949e;">Screenshot coming soon</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Download / Install Section -->
-    <section id="download" class="py-5 bg-light">
-        <div class="container">
-            <div class="card border-0 shadow-lg">
-                <div class="card-body p-4 p-md-5">
-                    <h2 class="display-5 fw-bold text-center mb-2">Download ShopGoodwill Sniper</h2>
-                    <p class="text-center text-muted mb-1">ShopGoodwill Sniper is a desktop app for Windows, Mac
-                        &amp; Linux. No upfront cost — you pay only when you win an auction.</p>
-                    <p class="text-center text-muted mb-4">We've automatically detected your operating system — select
-                        yours below.</p>
-
-                    <!-- OS Tabs -->
-                    <ul class="nav nav-pills justify-content-center mb-4 os-tabs" id="osTabs" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="tab-windows" type="button" onclick="selectOS('windows')"
-                                role="tab">
-                                <i class="bi bi-windows me-2"></i>Windows
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="tab-mac" type="button" onclick="selectOS('mac')" role="tab">
-                                <i class="bi bi-apple me-2"></i>macOS
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="tab-linux" type="button" onclick="selectOS('linux')"
-                                role="tab">
-                                <i class="bi bi-ubuntu me-2"></i>Linux
-                            </button>
-                        </li>
-                    </ul>
-
-                    <!-- Windows Panel -->
-                    <div id="os-windows" class="os-panel">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <p class="text-muted mb-3 text-center"><i class="bi bi-info-circle me-1"></i> Run this
-                                    command in
-                                    <strong>Windows Command Prompt</strong>:
-                                </p>
-                                <div class="install-command-box mb-3">
-                                    <button class="copy-btn" onclick="copyCmd('cmd-windows', this)">Copy</button>
-                                    <span class="cmd-label"><i class="bi bi-terminal me-1"></i>Windows Command
-                                        Prompt</span>
-                                    <code
-                                        id="cmd-windows">curl -fsSL https://shopgoodwillsniper.com/download/install-shopgoodwill-sniper.vbs -o "%TEMP%\sg.vbs" && wscript "%TEMP%\sg.vbs"</code>
-                                </div>
-                                <p class="text-muted small text-center"><span id="windows-version"></span>Windows 10 or
-                                    higher &bull; 64-bit</p>
+                <!-- Right: Live Snipe Demo -->
+                <div class="col-lg-6 fade-up">
+                    <div class="snipe-demo-card" aria-hidden="true">
+                        <div class="demo-header">
+                            <div class="demo-site-label">
+                                <i class="bi bi-shop"></i> ShopGoodwill.com
+                            </div>
+                            <div class="demo-sniper-label">
+                                <span class="demo-live-dot"></span> Sniper Active
                             </div>
                         </div>
-                    </div>
-
-                    <!-- macOS Panel -->
-                    <div id="os-mac" class="os-panel">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <p class="text-muted mb-3 text-center"><i class="bi bi-info-circle me-1"></i> Run this
-                                    command in
-                                    your <strong>Mac Terminal</strong>:</p>
-                                <div class="install-command-box mb-3">
-                                    <button class="copy-btn" onclick="copyCmd('cmd-mac', this)">Copy</button>
-                                    <span class="cmd-label"><i class="bi bi-terminal me-1"></i>macOS Terminal</span>
-                                    <code
-                                        id="cmd-mac">curl -fsSL https://shopgoodwillsniper.com/download/install-shopgoodwill-sniper.sh | bash</code>
+                        <div class="demo-item-row">
+                            <div class="demo-item-thumb" id="demoItemThumb">👖</div>
+                            <div style="min-width:0;">
+                                <div class="demo-item-name" id="demoItemName">Vintage Levi's Jacket</div>
+                                <div class="demo-item-bid">Current Bid: <strong id="demoBidDisplay">$12.50</strong>
                                 </div>
-                                <p class="text-muted small text-center"><span id="macos-version"></span>macOS 11 Big Sur
-                                    or higher &bull; Intel &amp;
-                                    Apple Silicon
-                                </p>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Linux Panel -->
-                    <div id="os-linux" class="os-panel">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <p class="text-muted mb-3 text-center"><i class="bi bi-info-circle me-1"></i> Run this
-                                    in your
-                                    <strong>Linux terminal</strong>:
-                                </p>
-                                <div class="install-command-box mb-3">
-                                    <button class="copy-btn" onclick="copyCmd('cmd-linux', this)">Copy</button>
-                                    <span class="cmd-label"><i class="bi bi-terminal me-1"></i>Linux Terminal</span>
-                                    <code
-                                        id="cmd-linux">curl -fsSL https://shopgoodwillsniper.com/download/install-shopgoodwill-sniper.sh | bash</code>
-                                </div>
-                                <p class="text-muted small text-center"><span id="linux-version"></span>Linux 64-bit</p>
+                        <div class="demo-countdown-area">
+                            <div class="demo-countdown-ring">
+                                <div class="demo-countdown-display" id="demoCountdown">00:00:05</div>
+                                <div class="demo-countdown-sub">Auction Ends In</div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 display-4">Tutorial Video</h2>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="video-container"
-                        style="background:#1a0d00; border-radius:15px; overflow:hidden; border: 1px solid #6b3a00;">
-                        <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/iF_m-xIBnJU?si=cwIDbiVi5Lh3wuHu"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                            </iframe>
+                        <div class="demo-status-bar" id="demoStatusBar">
+                            <i class="bi bi-crosshair2 me-1"></i>Snipe Queued &bull; Max Bid: <strong
+                                id="demoMaxBidDisplay">$25.00</strong>
+                        </div>
+                        <!-- Fire overlay -->
+                        <div class="demo-fire-overlay" id="demoFireOverlay">
+                            <i class="bi bi-lightning-charge-fill me-2"></i>SNIPE FIRED!
+                        </div>
+                        <!-- Win overlay -->
+                        <div class="demo-win-overlay" id="demoWinOverlay">
+                            <div class="demo-win-trophy">🏆</div>
+                            <div class="demo-win-text">YOU WIN!</div>
+                            <div class="demo-win-price" id="demoWinPrice">$12.50</div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="py-5 bg-light">
+    <!-- ═══════════════════════════════════════════════════════
+         TRUST BAR
+         ═══════════════════════════════════════════════════════ -->
+    <div class="trust-bar">
         <div class="container">
-            <div class="row text-center">
-                <div class="col-6 col-md-3 mb-4 mb-md-0">
-                    <div class="stat-number">Last Second</div>
-                    <p class="text-muted">Bid Fire Precision</p>
+            <div class="trust-bar-inner">
+                <div class="trust-item">
+                    <span class="trust-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span>4.9 / 5</span>
                 </div>
-                <div class="col-6 col-md-3 mb-4 mb-md-0">
-                    <div class="stat-number">High Speed</div>
-                    <p class="text-muted">Bid Engine</p>
+                <div class="trust-sep" aria-hidden="true"></div>
+                <div class="trust-item"><i class="bi bi-people-fill"></i>241 Reviews</div>
+                <div class="trust-sep" aria-hidden="true"></div>
+                <div class="trust-item"><i class="bi bi-laptop"></i>Windows &bull; Mac &bull; Linux</div>
+                <div class="trust-sep" aria-hidden="true"></div>
+                <div class="trust-item"><i class="bi bi-trophy-fill"></i>Pay Only When You Win</div>
+                <div class="trust-sep" aria-hidden="true"></div>
+                <div class="trust-item"><i class="bi bi-shield-check-fill"></i>Credentials Stay On Your Device</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+         HOW IT WORKS
+         ═══════════════════════════════════════════════════════ -->
+    <section class="section-light">
+        <div class="container">
+            <div class="section-title-wrap fade-up">
+                <h2 class="section-title section-title-light">How to Use ShopGoodwill Sniper in 4 Steps</h2>
+            </div>
+            <p class="text-center section-subtitle section-subtitle-light fade-up">From download to winning your first
+                auction in minutes.</p>
+            <div class="how-steps">
+                <div class="how-step fade-up fade-up-d1">
+                    <div class="how-step-num">1</div>
+                    <h3 class="how-step-title">Download</h3>
+                    <p class="how-step-desc">Download ShopGoodwill Sniper for your OS using the commands above</p>
                 </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-number">Synced</div>
-                    <p class="text-muted">Auction Timing</p>
+                <div class="how-step fade-up fade-up-d2">
+                    <div class="how-step-num">2</div>
+                    <h3 class="how-step-title">Log In</h3>
+                    <p class="how-step-desc">Sign in to your account, then log into ShopGoodwill.com inside the built-in
+                        browser</p>
                 </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-number">Instant</div>
-                    <p class="text-muted">Bid Delivery</p>
+                <div class="how-step fade-up fade-up-d3">
+                    <div class="how-step-num">3</div>
+                    <h3 class="how-step-title">Queue Snipes</h3>
+                    <p class="how-step-desc">Browse to any ShopGoodwill auction page and click "Snipe My Bid" — set your
+                        max bid amount and confirm</p>
+                </div>
+                <div class="how-step fade-up fade-up-d4">
+                    <div class="how-step-num">4</div>
+                    <h3 class="how-step-title">Win</h3>
+                    <p class="how-step-desc">The engine fires your bid automatically at the optimal moment. You hear the
+                        result immediately via audio alert</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="py-5">
+    <!-- ═══════════════════════════════════════════════════════
+         FEATURES
+         ═══════════════════════════════════════════════════════ -->
+    <section id="features" class="section-dark-2">
         <div class="container">
-            <h2 class="text-center mb-2 display-4">Why ShopGoodwill Sniper Wins Auctions</h2>
-            <p class="text-center text-muted mb-5 lead">Every technical advantage is tuned specifically for
+            <div class="section-title-wrap fade-up">
+                <h2 class="section-title section-title-dark">Why ShopGoodwill Sniper Wins Auctions</h2>
+            </div>
+            <p class="text-center section-subtitle section-subtitle-dark fade-up">Every technical advantage is tuned
+                specifically for
                 ShopGoodwill.com's auction system.</p>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="benefit-card card">
-                        <div class="text-center">
-                            <i class="bi bi-clock-fill feature-icon"></i>
-                        </div>
-                        <h3 class="h4 text-center mb-3">Last Second Sniping</h3>
-                        <p>The sniper places your bid at the last second — late enough that other bidders
+                <div class="col-md-6 col-lg-4 fade-up fade-up-d1">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap"><i class="bi bi-clock-fill"></i></div>
+                        <h3 class="feature-title">Last Second Sniping</h3>
+                        <p class="feature-desc">The sniper places your bid at the last second — late enough that other
+                            bidders
                             have no time to react and counter, but early enough to guarantee it goes through before
                             time runs out.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="benefit-card card">
-                        <div class="text-center">
-                            <i class="bi bi-broadcast-pin feature-icon"></i>
-                        </div>
-                        <h3 class="h4 text-center mb-3">Precision Clock Sync</h3>
-                        <p>The sniper stays precisely synchronized with ShopGoodwill's auction timing at all times — so
+                <div class="col-md-6 col-lg-4 fade-up fade-up-d2">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap"><i class="bi bi-broadcast-pin"></i></div>
+                        <h3 class="feature-title">Precision Clock Sync</h3>
+                        <p class="feature-desc">The sniper stays precisely synchronized with ShopGoodwill's auction
+                            timing at all times — so
                             every bid fires exactly when it needs to, not a moment early or late.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="benefit-card card">
-                        <div class="text-center">
-                            <i class="bi bi-lightning-charge-fill feature-icon"></i>
-                        </div>
-                        <h3 class="h4 text-center mb-3">Instant Bid Delivery</h3>
-                        <p>Before the auction ends, the sniper engine completes all preparation in advance. When it's
+                <div class="col-md-6 col-lg-4 fade-up fade-up-d3">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap"><i class="bi bi-lightning-charge-fill"></i></div>
+                        <h3 class="feature-title">Instant Bid Delivery</h3>
+                        <p class="feature-desc">Before the auction ends, the sniper engine completes all preparation in
+                            advance. When it's
                             time to fire, your bid goes out instantly — no hesitation, no delays.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="benefit-card card">
-                        <div class="text-center">
-                            <i class="bi bi-speedometer2 feature-icon"></i>
-                        </div>
-                        <h3 class="h4 text-center mb-3">High-Precision Bid Engine</h3>
-                        <p>The sniper engine operates at extremely high precision, catching the exact firing window for
+                <div class="col-md-6 col-lg-4 fade-up fade-up-d1">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap"><i class="bi bi-speedometer2"></i></div>
+                        <h3 class="feature-title">High-Precision Bid Engine</h3>
+                        <p class="feature-desc">The sniper engine operates at extremely high precision, catching the
+                            exact firing window for
                             every queued auction without missing a beat.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="benefit-card card">
-                        <div class="text-center">
-                            <i class="bi bi-currency-dollar feature-icon"></i>
-                        </div>
-                        <h3 class="h4 text-center mb-3">Fixed or Auto-Max Bid</h3>
-                        <p>Set a fixed maximum bid for precise control, or use Auto-Max to let the engine
+                <div class="col-md-6 col-lg-4 fade-up fade-up-d2">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap"><i class="bi bi-currency-dollar"></i></div>
+                        <h3 class="feature-title">Fixed or Auto-Max Bid</h3>
+                        <p class="feature-desc">Set a fixed maximum bid for precise control, or use Auto-Max to let the
+                            engine
                             automatically calculate the optimal bid amount for each item. Never bid more than you need
                             to.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="benefit-card card">
-                        <div class="text-center">
-                            <i class="bi bi-list-check feature-icon"></i>
-                        </div>
-                        <h3 class="h4 text-center mb-3">My Snipes Drawer</h3>
-                        <p>Queue multiple auctions from different listings at once. The My Snipes drawer shows live
+                <div class="col-md-6 col-lg-4 fade-up fade-up-d3">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap"><i class="bi bi-list-check"></i></div>
+                        <h3 class="feature-title">My Snipes Drawer</h3>
+                        <p class="feature-desc">Queue multiple auctions from different listings at once. The My Snipes
+                            drawer shows live
                             countdown timers, item photos, bid amounts, and status badges for every queued and past
                             auction — all in one panel.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="benefit-card card">
-                        <div class="text-center">
-                            <i class="bi bi-bell-fill feature-icon"></i>
-                        </div>
-                        <h3 class="h4 text-center mb-3">Win / Loss Audio Alerts</h3>
-                        <p>The moment a bid fires you hear a snipe sound. Win — you hear a cheer. Outbid — a loss tone.
+                <div class="col-md-6 col-lg-4 fade-up fade-up-d1">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap"><i class="bi bi-bell-fill"></i></div>
+                        <h3 class="feature-title">Win / Loss Audio Alerts</h3>
+                        <p class="feature-desc">The moment a bid fires you hear a snipe sound. Win — you hear a cheer.
+                            Outbid — a loss tone.
                             Instant audio feedback without ever having to look at the screen, even when the window is
                             minimized.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="benefit-card card">
-                        <div class="text-center">
-                            <i class="bi bi-moon-stars-fill feature-icon"></i>
-                        </div>
-                        <h3 class="h4 text-center mb-3">Sleep Prevention</h3>
-                        <p>While the sniper engine is active, ShopGoodwill Sniper prevents your OS from sleeping or
+                <div class="col-md-6 col-lg-4 fade-up fade-up-d2">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap"><i class="bi bi-moon-stars-fill"></i></div>
+                        <h3 class="feature-title">Sleep Prevention</h3>
+                        <p class="feature-desc">While the sniper engine is active, ShopGoodwill Sniper prevents your OS
+                            from sleeping or
                             hibernating.
                             Step away, let the screen turn off — but your computer stays awake and every bid fires on
                             schedule.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="benefit-card card">
-                        <div class="text-center">
-                            <i class="bi bi-shield-lock-fill feature-icon"></i>
-                        </div>
-                        <h3 class="h4 text-center mb-3">Private Session Isolation</h3>
-                        <p>Your ShopGoodwill session runs in a completely isolated browser partition inside ShopGoodwill
+                <div class="col-md-6 col-lg-4 fade-up fade-up-d3">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrap"><i class="bi bi-shield-lock-fill"></i></div>
+                        <h3 class="feature-title">Private Session Isolation</h3>
+                        <p class="feature-desc">Your ShopGoodwill session runs in a completely isolated browser
+                            partition inside ShopGoodwill
                             Sniper.
                             Your account credentials and cookies are never shared with other websites or your regular
                             browser profile.</p>
@@ -522,202 +481,263 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="py-5 bg-light">
+    <!-- ═══════════════════════════════════════════════════════
+         STATS
+         ═══════════════════════════════════════════════════════ -->
+    <section class="stats-section">
         <div class="container">
-            <h2 class="text-center mb-5 display-4">How to Use ShopGoodwill Sniper in 4 Steps</h2>
-            <div class="row">
-                <div class="col-6 col-md-3 mb-4">
-                    <div class="text-center">
-                        <div class="rounded-circle text-white d-inline-flex align-items-center justify-content-center"
-                            style="width:60px; height:60px; background:#2196F3;">
-                            <span class="h3 mb-0">1</span>
-                        </div>
-                        <h3 class="h5 mt-3">Download</h3>
-                        <p class="small">Download ShopGoodwill Sniper for your OS using the commands above</p>
-                    </div>
+            <div class="row text-center">
+                <div class="col-6 col-md-3 stat-item fade-up fade-up-d1">
+                    <span class="stat-value">Last Second</span>
+                    <p class="stat-label">Bid Fire Precision</p>
                 </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <div class="text-center">
-                        <div class="rounded-circle text-white d-inline-flex align-items-center justify-content-center"
-                            style="width:60px; height:60px; background:#2196F3;">
-                            <span class="h3 mb-0">2</span>
-                        </div>
-                        <h3 class="h5 mt-3">Log In</h3>
-                        <p class="small">Sign in to your account, then log into ShopGoodwill.com inside the
-                            built-in browser</p>
-                    </div>
+                <div class="col-6 col-md-3 stat-item fade-up fade-up-d2">
+                    <span class="stat-value">High Speed</span>
+                    <p class="stat-label">Bid Engine</p>
                 </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <div class="text-center">
-                        <div class="rounded-circle text-white d-inline-flex align-items-center justify-content-center"
-                            style="width:60px; height:60px; background:#2196F3;">
-                            <span class="h3 mb-0">3</span>
-                        </div>
-                        <h3 class="h5 mt-3">Queue Snipes</h3>
-                        <p class="small">Browse to any ShopGoodwill auction page and click "Snipe My Bid" — set your max
-                            bid amount and confirm</p>
-                    </div>
+                <div class="col-6 col-md-3 stat-item fade-up fade-up-d3">
+                    <span class="stat-value">Synced</span>
+                    <p class="stat-label">Auction Timing</p>
                 </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <div class="text-center">
-                        <div class="rounded-circle text-white d-inline-flex align-items-center justify-content-center"
-                            style="width:60px; height:60px; background:#2196F3;">
-                            <span class="h3 mb-0">4</span>
-                        </div>
-                        <h3 class="h5 mt-3">Win</h3>
-                        <p class="small">The engine fires your bid automatically at the optimal moment. You hear
-                            the result immediately via audio alert</p>
-                    </div>
+                <div class="col-6 col-md-3 stat-item fade-up fade-up-d4">
+                    <span class="stat-value">Instant</span>
+                    <p class="stat-label">Bid Delivery</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Reviews Section -->
-    <section id="reviews" class="py-5 bg-light">
+    <!-- ═══════════════════════════════════════════════════════
+         SCREENSHOT
+         ═══════════════════════════════════════════════════════ -->
+    <section class="section-dark">
         <div class="container">
-            <h2 class="text-center mb-2 display-4">ShopGoodwill Sniper Reviews</h2>
-            <p class="text-center text-muted mb-5 lead">Trusted by resellers, collectors, and deal hunters across the
+            <div class="section-title-wrap fade-up">
+                <h2 class="section-title section-title-dark">ShopGoodwill Sniper in Action</h2>
+            </div>
+            <p class="text-center section-subtitle section-subtitle-dark fade-up">Click the screenshot to zoom in and
+                explore every feature of the interface.</p>
+            <div class="screenshot-wrap fade-up">
+                <img src="/img/bots/shopgoodwill-sniper.png" class="lightbox-img"
+                    alt="ShopGoodwill Sniper application screenshot showing auction queue, live countdown timers, and snipe controls"
+                    fetchpriority="high" decoding="async"
+                    onerror="this.closest('.screenshot-wrap').style.display='none'">
+                <div class="screenshot-zoom-hint"><i class="bi bi-zoom-in"></i> Click to zoom</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         VIDEO
+         ═══════════════════════════════════════════════════════ -->
+    <section class="section-dark-2">
+        <div class="container">
+            <div class="section-title-wrap fade-up">
+                <h2 class="section-title section-title-dark">Tutorial Video</h2>
+            </div>
+            <p class="text-center section-subtitle section-subtitle-dark fade-up">Watch the full tutorial to see
+                ShopGoodwill Sniper in action — from install to your first winning snipe.</p>
+            <div class="video-wrap fade-up">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/iF_m-xIBnJU?si=cwIDbiVi5Lh3wuHu"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         PRICING
+         ═══════════════════════════════════════════════════════ -->
+    <section id="pricing" class="section-light">
+        <div class="container">
+            <div class="section-title-wrap fade-up">
+                <h2 class="section-title section-title-light">ShopGoodwill Sniper Pricing</h2>
+            </div>
+            <p class="text-center section-subtitle section-subtitle-light fade-up">Pay only when you win. No upfront
+                cost.<br>
+                <span style="font-size:.92rem;">Standard plan charges a small success fee only when you win. Pro plan
+                    has no success fee at all.</span>
+            </p>
+            <div class="row justify-content-center g-4">
+                <div class="col-md-6 col-lg-4 fade-up fade-up-d1">
+                    <div class="pricing-card">
+                        <div class="pricing-plan-name">Standard</div>
+                        <div class="pricing-value">2%</div>
+                        <p class="pricing-period">Success fee &bull; No monthly fee</p>
+                        <ul class="pricing-features">
+                            <li><i class="bi bi-check-circle-fill check-icon"></i>Pay only when you win</li>
+                            <li><i class="bi bi-check-circle-fill check-icon"></i>Unlimited auction snipes</li>
+                            <li><i class="bi bi-check-circle-fill check-icon"></i>Precision clock synchronization</li>
+                            <li><i class="bi bi-check-circle-fill check-icon"></i>Auto-Max bid mode</li>
+                            <li><i class="bi bi-check-circle-fill check-icon"></i>Windows, Mac &amp; Linux</li>
+                            <li><i class="bi bi-check-circle-fill check-icon"></i>Win / loss audio alerts</li>
+                            <li><i class="bi bi-check-circle-fill check-icon"></i>No win, no charge</li>
+                        </ul>
+                        <a href="#download" class="pricing-cta pricing-cta-outline">Download &amp; Start Sniping</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 fade-up fade-up-d2">
+                    <div class="pricing-card pricing-card-popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="pricing-plan-name">Pro</div>
+                        <div class="pricing-value">0%</div>
+                        <p class="pricing-period">No success fee &bull; Monthly plan</p>
+                        <ul class="pricing-features">
+                            <li><i class="bi bi-check-circle-fill check-icon"></i>No success fee (0% — save 100%)</li>
+                            <li><i class="bi bi-check-circle-fill check-icon"></i>Win auctions with 0% success fee</li>
+                            <li><i class="bi bi-check-circle-fill check-icon"></i>Unlimited auction snipes</li>
+                            <li><i class="bi bi-check-circle-fill check-icon"></i>Precision clock synchronization</li>
+                            <li><i class="bi bi-check-circle-fill check-icon"></i>Auto-Max bid mode</li>
+                            <li><i class="bi bi-check-circle-fill check-icon"></i>Windows, Mac &amp; Linux</li>
+                            <li><i class="bi bi-check-circle-fill check-icon"></i>Win / loss audio alerts</li>
+                        </ul>
+                        <a href="#download" class="pricing-cta pricing-cta-primary">Download &amp; Upgrade</a>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center mt-4" style="font-size:.8rem; color:var(--c-text-dark-2);">Standard: 2% success fee
+                charged only on auctions you win. Pro: no success fee — keep 100% of your savings.</p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         REVIEWS
+         ═══════════════════════════════════════════════════════ -->
+    <section id="reviews" class="section-dark">
+        <div class="container">
+            <div class="section-title-wrap fade-up">
+                <h2 class="section-title section-title-dark">ShopGoodwill Sniper Reviews</h2>
+            </div>
+            <p class="text-center section-subtitle section-subtitle-dark fade-up">Trusted by resellers, collectors, and
+                deal hunters across the
                 country.</p>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="benefit-card card h-100">
-                        <div class="text-warning mb-2 fs-5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="mb-3">"I resell vintage goods I find on ShopGoodwill. Before the sniper I was losing
+                <div class="col-md-6 col-lg-4 fade-up fade-up-d1">
+                    <div class="review-card">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="review-text">"I resell vintage goods I find on ShopGoodwill. Before the sniper I was
+                            losing
                             to other bidders at the last second constantly. Now I'm the one winning at the last second.
                             I've won 23 of my last 27 auctions. This is an absolute game changer."</p>
-                        <p class="mb-0 fw-bold text-muted small">— Jessica T., Vintage Reseller</p>
+                        <div class="review-author">
+                            <div class="review-avatar">J</div>
+                            <div>
+                                <div class="review-name">Jessica T.</div>
+                                <div class="review-role">Vintage Reseller</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="benefit-card card h-100">
-                        <div class="text-warning mb-2 fs-5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="mb-3">"I tried a web-based sniper before but it missed bids a few times. ShopGoodwill
+                <div class="col-md-6 col-lg-4 fade-up fade-up-d2">
+                    <div class="review-card">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="review-text">"I tried a web-based sniper before but it missed bids a few times.
+                            ShopGoodwill
                             Sniper is a desktop app so it fires bids way more reliably. The precision clock sync is no
                             joke — it hits the exact last second every time."</p>
-                        <p class="mb-0 fw-bold text-muted small">— Marcus D., Thrift Flipper</p>
+                        <div class="review-author">
+                            <div class="review-avatar">M</div>
+                            <div>
+                                <div class="review-name">Marcus D.</div>
+                                <div class="review-role">Thrift Flipper</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="benefit-card card h-100">
-                        <div class="text-warning mb-2 fs-5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="mb-3">"The audio alerts are so satisfying. I queue my snipes in the morning and just
+                <div class="col-md-6 col-lg-4 fade-up fade-up-d3">
+                    <div class="review-card">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="review-text">"The audio alerts are so satisfying. I queue my snipes in the morning and
+                            just
                             listen for the win sound throughout the day. My win rate went from about 40% to over 80%.
                             The fact that you only pay a small fee when you actually win is brilliant."</p>
-                        <p class="mb-0 fw-bold text-muted small">— Danielle R., Goodwill Collector</p>
+                        <div class="review-author">
+                            <div class="review-avatar">D</div>
+                            <div>
+                                <div class="review-name">Danielle R.</div>
+                                <div class="review-role">Goodwill Collector</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="benefit-card card h-100">
-                        <div class="text-warning mb-2 fs-5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="mb-3">"Setting it up took less than 2 minutes. I watched the tutorial, ran the install
+                <div class="col-md-6 col-lg-4 fade-up fade-up-d1">
+                    <div class="review-card">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="review-text">"Setting it up took less than 2 minutes. I watched the tutorial, ran the
+                            install
                             command, logged in, and queued my first snipe. Won the item. Easiest piece of software I've
                             ever used."</p>
-                        <p class="mb-0 fw-bold text-muted small">— Kevin M., eBay Seller</p>
+                        <div class="review-author">
+                            <div class="review-avatar">K</div>
+                            <div>
+                                <div class="review-name">Kevin M.</div>
+                                <div class="review-role">eBay Seller</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="benefit-card card h-100">
-                        <div class="text-warning mb-2 fs-5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="mb-3">"Auto-Max bid mode is brilliant. I set it and forget it. The sniper calculates
+                <div class="col-md-6 col-lg-4 fade-up fade-up-d2">
+                    <div class="review-card">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="review-text">"Auto-Max bid mode is brilliant. I set it and forget it. The sniper
+                            calculates
                             exactly what to bid — I never overpay and I'm winning way more often than I was manually
                             bidding at the last second."</p>
-                        <p class="mb-0 fw-bold text-muted small">— Sandra L., Antique Dealer</p>
+                        <div class="review-author">
+                            <div class="review-avatar">S</div>
+                            <div>
+                                <div class="review-name">Sandra L.</div>
+                                <div class="review-role">Antique Dealer</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="benefit-card card h-100">
-                        <div class="text-warning mb-2 fs-5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="mb-3">"I was skeptical about downloading software but the session isolation really put
+                <div class="col-md-6 col-lg-4 fade-up fade-up-d3">
+                    <div class="review-card">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="review-text">"I was skeptical about downloading software but the session isolation
+                            really put
                             me at ease. My ShopGoodwill login stays inside the app — nothing goes to any external
                             server. Totally private and it works flawlessly."</p>
-                        <p class="mb-0 fw-bold text-muted small">— Tom H., Electronics Flipper</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-5">
-                <span class="text-warning fs-4">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <span class="ms-2 fw-bold fs-5">4.9 / 5</span>
-                <span class="ms-2 text-muted">based on 241 reviews</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-2 display-4">ShopGoodwill Sniper Pricing</h2>
-            <p class="text-center text-muted mb-2 lead">Pay only when you win. No upfront cost.</p>
-            <p class="text-center text-muted mb-5">Standard plan charges a small success fee only when you win. Pro plan
-                has no success fee at all.</p>
-            <div class="row justify-content-center g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="card border-0 shadow-lg text-center h-100">
-                        <div class="card-body p-5">
-                            <h3 class="h5 text-muted mb-1">Standard</h3>
-                            <div class="display-1 fw-bold mb-1" style="color:#2196F3;">2%</div>
-                            <p class="text-muted mb-4">Success fee &bull; No monthly fee</p>
-                            <ul class="list-unstyled text-start mb-4">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Pay only when
-                                    you win</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Unlimited
-                                    auction snipes</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Precision
-                                    clock synchronization</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Auto-Max bid
-                                    mode</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Windows, Mac
-                                    &amp; Linux</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Win / loss
-                                    audio alerts</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>No win, no
-                                    charge</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card border-primary shadow-lg text-center h-100" style="border-width:2px !important;">
-                        <div class="card-header bg-primary text-white fw-bold">Most Popular</div>
-                        <div class="card-body p-5">
-                            <h3 class="h5 text-muted mb-1">Pro</h3>
-                            <div class="display-1 fw-bold mb-1" style="color:#2196F3;">0%</div>
-                            <p class="text-muted mb-4">No success fee &bull; Monthly plan</p>
-                            <ul class="list-unstyled text-start mb-4">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>No success fee
-                                    (0% — save 100%)</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Win auctions
-                                    for free</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Unlimited
-                                    auction snipes</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Precision
-                                    clock synchronization</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Auto-Max bid
-                                    mode</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Windows, Mac
-                                    &amp; Linux</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Win / loss
-                                    audio alerts</li>
-                            </ul>
+                        <div class="review-author">
+                            <div class="review-avatar">T</div>
+                            <div>
+                                <div class="review-name">Tom H.</div>
+                                <div class="review-role">Electronics Flipper</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <p class="text-center text-muted small mt-4">Standard: 2% success fee charged only on auctions you win. Pro:
-                no success fee — win for free.</p>
+            <div class="reviews-summary fade-up">
+                <div class="reviews-rating-big">4.9</div>
+                <div>
+                    <div style="color:var(--c-gold); font-size:1.1rem; letter-spacing:2px;">
+                        &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div style="font-size:.82rem; color:var(--c-text-muted); margin-top:3px;">based on 241 reviews</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Comparison Section -->
-    <section class="py-5 bg-light">
+    <!-- ═══════════════════════════════════════════════════════
+         COMPARISON TABLE
+         ═══════════════════════════════════════════════════════ -->
+    <section class="section-light">
         <div class="container">
-            <h2 class="text-center mb-2 display-4">ShopGoodwill Sniper vs The Alternatives</h2>
-            <p class="text-center text-muted mb-5 lead">See how ShopGoodwill Sniper stacks up against manual bidding and
+            <div class="section-title-wrap fade-up">
+                <h2 class="section-title section-title-light">ShopGoodwill Sniper vs The Alternatives</h2>
+            </div>
+            <p class="text-center section-subtitle section-subtitle-light fade-up">See how ShopGoodwill Sniper stacks up
+                against manual bidding and
                 web-based services like ThriftSniper.</p>
-            <div class="table-responsive">
-                <table class="table table-bordered text-center align-middle">
-                    <thead class="table-dark">
+            <div class="table-responsive fade-up">
+                <table class="table table-bordered text-center align-middle comparison-table">
+                    <thead>
                         <tr>
                             <th class="text-start" style="min-width:200px;">Feature</th>
                             <th>ShopGoodwill Sniper</th>
@@ -727,55 +747,55 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="text-start fw-bold">Pricing model</td>
-                            <td>Pay-Per-Win (0-2% per win)</td>
+                            <td class="text-start">Pricing model</td>
+                            <td>Pay-Per-Win (0–2% per win)</td>
                             <td>Pay-Per-Snipe ($0.50 per snipe)</td>
-                            <td><span class="badge bg-success fs-6">Free</span></td>
+                            <td><span class="badge bg-secondary">No tool needed</span></td>
                         </tr>
                         <tr>
-                            <td class="text-start fw-bold">Pay only when you win</td>
+                            <td class="text-start">Pay only when you win</td>
                             <td><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
                             <td><i class="bi bi-x-circle-fill text-danger fs-5"></i></td>
                             <td><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
                         </tr>
                         <tr>
-                            <td class="text-start fw-bold">Platform</td>
+                            <td class="text-start">Platform</td>
                             <td>Desktop app (Win / Mac / Linux)</td>
                             <td>Web-based</td>
                             <td>Any browser</td>
                         </tr>
                         <tr>
-                            <td class="text-start fw-bold">Clock synchronization</td>
+                            <td class="text-start">Clock synchronization</td>
                             <td><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
                             <td><i class="bi bi-dash text-muted fs-5"></i></td>
                             <td><i class="bi bi-x-circle-fill text-danger fs-5"></i></td>
                         </tr>
                         <tr>
-                            <td class="text-start fw-bold">Pre-warmed connections</td>
+                            <td class="text-start">Pre-warmed connections</td>
                             <td><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
                             <td><i class="bi bi-dash text-muted fs-5"></i></td>
                             <td><i class="bi bi-x-circle-fill text-danger fs-5"></i></td>
                         </tr>
                         <tr>
-                            <td class="text-start fw-bold">No server dependency</td>
+                            <td class="text-start">No server dependency</td>
                             <td><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
                             <td><i class="bi bi-x-circle-fill text-danger fs-5"></i></td>
                             <td><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
                         </tr>
                         <tr>
-                            <td class="text-start fw-bold">Auto-Max bid mode</td>
+                            <td class="text-start">Auto-Max bid mode</td>
                             <td><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
                             <td><i class="bi bi-dash text-muted fs-5"></i></td>
                             <td><i class="bi bi-x-circle-fill text-danger fs-5"></i></td>
                         </tr>
                         <tr>
-                            <td class="text-start fw-bold">Credentials stay on your device</td>
+                            <td class="text-start">Credentials stay on your device</td>
                             <td><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
                             <td><i class="bi bi-x-circle-fill text-danger fs-5"></i></td>
                             <td><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
                         </tr>
                         <tr>
-                            <td class="text-start fw-bold">Win / loss audio alerts</td>
+                            <td class="text-start">Win / loss audio alerts</td>
                             <td><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
                             <td><i class="bi bi-dash text-muted fs-5"></i></td>
                             <td><i class="bi bi-x-circle-fill text-danger fs-5"></i></td>
@@ -783,17 +803,120 @@
                     </tbody>
                 </table>
             </div>
-            <p class="text-center text-muted small mt-3">* Comparison based on publicly available information as of
+            <p class="text-center mt-3" style="font-size:.78rem; color:var(--c-text-dark-2);">* Comparison based on
+                publicly available information as of
                 2026. Features subject to change.</p>
         </div>
     </section>
 
-    <!-- FAQ Section  -->
-    <section id="faq" class="py-5">
+    <!-- ═══════════════════════════════════════════════════════
+         DOWNLOAD
+         ═══════════════════════════════════════════════════════ -->
+    <section id="download" class="download-section">
+        <div class="container position-relative">
+            <div class="download-card">
+                <h2 class="section-title section-title-dark text-center mb-2 fade-up">Download ShopGoodwill Sniper</h2>
+                <p class="text-center mb-1 fade-up" style="font-size:1rem; color:var(--c-text-soft);">ShopGoodwill
+                    Sniper is a desktop app for Windows, Mac
+                    &amp; Linux. No upfront cost — you pay only when you win an auction.</p>
+                <p class="text-center mb-5 fade-up" style="font-size:.86rem; color:var(--c-text-muted);">We've
+                    automatically detected your operating system — select
+                    yours below.</p>
+
+                <!-- OS Tabs -->
+                <ul class="nav nav-pills justify-content-center mb-4 os-tabs fade-up" id="osTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tab-windows" type="button" onclick="selectOS('windows')"
+                            role="tab">
+                            <i class="bi bi-windows me-2"></i>Windows
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tab-mac" type="button" onclick="selectOS('mac')" role="tab">
+                            <i class="bi bi-apple me-2"></i>macOS
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tab-linux" type="button" onclick="selectOS('linux')" role="tab">
+                            <i class="bi bi-ubuntu me-2"></i>Linux
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Windows Panel -->
+                <div id="os-windows" class="os-panel">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <p class="mb-3 text-center" style="font-size:.86rem; color:var(--c-text-muted);">
+                                <i class="bi bi-info-circle me-1"></i>Run this command in
+                                <strong style="color:var(--c-text-soft);">Windows Command Prompt</strong>:
+                            </p>
+                            <div class="install-command-box mb-3">
+                                <button class="copy-btn" onclick="copyCmd('cmd-windows', this)">Copy</button>
+                                <span class="cmd-label"><i class="bi bi-terminal me-1"></i>Windows Command Prompt</span>
+                                <code
+                                    id="cmd-windows">curl -fsSL https://shopgoodwillsniper.com/download/install-shopgoodwill-sniper.vbs -o "%TEMP%\sg.vbs" && wscript "%TEMP%\sg.vbs"</code>
+                            </div>
+                            <p class="text-center" style="font-size:.78rem; color:var(--c-text-muted);"><span
+                                    id="windows-version"></span>Windows 10 or higher &bull; 64-bit</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- macOS Panel -->
+                <div id="os-mac" class="os-panel">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <p class="mb-3 text-center" style="font-size:.86rem; color:var(--c-text-muted);">
+                                <i class="bi bi-info-circle me-1"></i>Run this command in your
+                                <strong style="color:var(--c-text-soft);">Mac Terminal</strong>:
+                            </p>
+                            <div class="install-command-box mb-3">
+                                <button class="copy-btn" onclick="copyCmd('cmd-mac', this)">Copy</button>
+                                <span class="cmd-label"><i class="bi bi-terminal me-1"></i>macOS Terminal</span>
+                                <code
+                                    id="cmd-mac">curl -fsSL https://shopgoodwillsniper.com/download/install-shopgoodwill-sniper.sh | bash</code>
+                            </div>
+                            <p class="text-center" style="font-size:.78rem; color:var(--c-text-muted);"><span
+                                    id="macos-version"></span>macOS 11 Big Sur or higher &bull; Intel &amp; Apple
+                                Silicon</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Linux Panel -->
+                <div id="os-linux" class="os-panel">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <p class="mb-3 text-center" style="font-size:.86rem; color:var(--c-text-muted);">
+                                <i class="bi bi-info-circle me-1"></i>Run this in your
+                                <strong style="color:var(--c-text-soft);">Linux terminal</strong>:
+                            </p>
+                            <div class="install-command-box mb-3">
+                                <button class="copy-btn" onclick="copyCmd('cmd-linux', this)">Copy</button>
+                                <span class="cmd-label"><i class="bi bi-terminal me-1"></i>Linux Terminal</span>
+                                <code
+                                    id="cmd-linux">curl -fsSL https://shopgoodwillsniper.com/download/install-shopgoodwill-sniper.sh | bash</code>
+                            </div>
+                            <p class="text-center" style="font-size:.78rem; color:var(--c-text-muted);"><span
+                                    id="linux-version"></span>Linux 64-bit</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         FAQ
+         ═══════════════════════════════════════════════════════ -->
+    <section id="faq" class="section-light">
         <div class="container">
-            <h2 class="text-center mb-5 display-4">Frequently Asked Questions</h2>
+            <div class="section-title-wrap fade-up">
+                <h2 class="section-title section-title-light">Frequently Asked Questions</h2>
+            </div>
             <div class="row">
-                <div class="col-lg-8 mx-auto">
+                <div class="col-lg-8 mx-auto fade-up">
                     <div class="accordion" id="faqAccordion">
                         <div class="accordion-item">
                             <h3 class="accordion-header">
@@ -971,60 +1094,83 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
+    <!-- ═══════════════════════════════════════════════════════
+         FINAL CTA
+         ═══════════════════════════════════════════════════════ -->
+    <section class="final-cta-section">
+        <div class="final-cta-glow" aria-hidden="true"></div>
+        <div class="container" style="position:relative; z-index:1;">
+            <h2 class="final-cta-title">Ready to Win Every ShopGoodwill Auction?</h2>
+            <p class="final-cta-desc">Join thousands of resellers, collectors, and deal hunters using ShopGoodwill
+                Sniper.</p>
+            <a href="#download" class="download-btn download-btn-hero">
+                <i class="bi bi-download"></i>Download ShopGoodwill Sniper
+            </a>
+            <p class="final-cta-note">
+                <i class="bi bi-check-circle me-1"></i>Pay only when you win &bull;
+                No monthly fee required &bull;
+                Windows, Mac &amp; Linux
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════════════════ -->
+    <footer class="site-footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h5 class="mb-3"><i class="bi bi-robot me-2"></i>ShopGoodwill Sniper</h5>
-                    <p class="text-white-50">Automated auction sniping for ShopGoodwill. Win more Goodwill auctions with
+                    <a href="/" class="footer-brand">
+                        <span>🎯</span> ShopGoodwill Sniper
+                    </a>
+                    <p class="footer-desc">Automated auction sniping for ShopGoodwill. Win more Goodwill auctions with
                         precision last-second bidding.</p>
-                    <div class="d-flex gap-3 mt-3"></div>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
-                    <h6 class="mb-3">Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <!-- <li class="mb-2"><a href="/software" class="text-white-50 hover-text-white"><i
-                                    class="bi bi-laptop me-1"></i>Software</a></li> -->
-                        <li class="mb-2"><a href="/" class="text-white-50 hover-text-white"><i
-                                    class="bi bi-house-door me-1"></i>Home</a></li>
-                        <li class="mb-2"><a href="https://botgrabber.com/user" target="_blank" rel="noopener"
-                                class="text-white-50 hover-text-white"><i class="bi bi-envelope me-1"></i>Contact</a>
-                        </li>
+                    <h6 class="footer-heading">Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="/"><i class="bi bi-house-door"></i>Home</a></li>
+                        <li><a href="#features"><i class="bi bi-stars"></i>Features</a></li>
+                        <li><a href="#pricing"><i class="bi bi-tag"></i>Pricing</a></li>
+                        <li><a href="#download"><i class="bi bi-download"></i>Download</a></li>
+                        <li><a href="#faq"><i class="bi bi-question-circle"></i>FAQ</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4 ms-auto">
-                    <h6 class="mb-3">Resources</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="https://botgrabber.com/user" target="_blank" rel="noopener"
-                                class="text-white-50 hover-text-white"><i class="bi bi-person-circle me-1"></i>User
-                                Account</a></li>
-                        <li class="mb-2"><a href="https://botgrabber.com/affiliate-program" target="_blank"
-                                rel="noopener" class="text-white-50 hover-text-white"><i
-                                    class="bi bi-gift me-1"></i>Affiliate Program</a></li>
-                        <li class="mb-2"><a href="https://botgrabber.com/privacy" target="_blank" rel="noopener"
-                                class="text-white-50 hover-text-white"><i class="bi bi-shield-lock me-1"></i>Privacy
-                                Policy</a></li>
-                        <li class="mb-2"><a href="https://botgrabber.com/terms" target="_blank" rel="noopener"
-                                class="text-white-50 hover-text-white"><i class="bi bi-file-text me-1"></i>Terms &amp;
-                                Conditions</a></li>
+                    <h6 class="footer-heading">Resources</h6>
+                    <ul class="footer-links">
+                        <li><a href="https://botgrabber.com/user" target="_blank" rel="noopener"><i
+                                    class="bi bi-person-circle"></i>User Account</a></li>
+                        <li><a href="https://botgrabber.com/affiliate-program" target="_blank" rel="noopener"><i
+                                    class="bi bi-gift"></i>Affiliate Program</a></li>
+                        <li><a href="https://botgrabber.com/privacy" target="_blank" rel="noopener"><i
+                                    class="bi bi-shield-lock"></i>Privacy Policy</a></li>
+                        <li><a href="https://botgrabber.com/terms" target="_blank" rel="noopener"><i
+                                    class="bi bi-file-text"></i>Terms &amp; Conditions</a></li>
+                        <li><a href="https://botgrabber.com/user" target="_blank" rel="noopener"><i
+                                    class="bi bi-envelope"></i>Contact</a></li>
                     </ul>
                 </div>
             </div>
-            <hr class="border-secondary my-4">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <p class="mb-2 text-white-50">&copy; 2026 ShopGoodwill Sniper. All rights reserved.</p>
-                    <p class="mb-0 small text-white-50">
-                        All product and company names are trademarks&trade; or registered&reg; trademarks of their
-                        respective
-                        holders.<br>
-                        Use of them does not imply any affiliation with or endorsement by them.
-                    </p>
-                </div>
+            <hr class="footer-divider">
+            <div class="footer-legal">
+                <p class="mb-1">&copy; 2026 ShopGoodwill Sniper. All rights reserved.</p>
+                <p class="mb-0">All product and company names are trademarks&trade; or registered&reg; trademarks of
+                    their respective
+                    holders.<br>Use of them does not imply any affiliation with or endorsement by them.</p>
             </div>
         </div>
     </footer>
+
+    <!-- ═══════════════════════════════════════════════════════
+         MOBILE STICKY CTA
+         ═══════════════════════════════════════════════════════ -->
+    <div class="mobile-sticky-cta" aria-label="Download ShopGoodwill Sniper">
+        <a href="#download" class="download-btn">
+            <i class="bi bi-download"></i>Download Now
+        </a>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/image-lightbox.js"></script>

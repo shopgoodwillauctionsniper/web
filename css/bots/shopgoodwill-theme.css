@@ -361,8 +361,9 @@ body {
     border-radius: var(--r-xl);
     overflow: hidden;
     cursor: zoom-in;
-    transition: box-shadow .25s var(--ease), border-color .25s var(--ease);
+    transition: box-shadow .25s var(--ease);
     box-shadow: var(--sh-glow);
+    padding: 48px 32px;
 }
 
 #heroDemoWrap:hover {

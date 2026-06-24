@@ -194,7 +194,7 @@ body {
     align-items: center;
     background: linear-gradient(160deg, #040e1c 0%, #071a30 40%, #0a1e35 70%, #060f1c 100%);
     overflow: hidden;
-    padding: 100px 0 80px;
+    padding: 72px 0 56px;
 }
 
 .hero-section::before {
@@ -277,9 +277,13 @@ body {
 /* Hero left column — centred at all viewport sizes */
 .hero-section .col-lg-6:first-child {
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-copy {
+    width: 100%;
     max-width: 540px;
     margin-left: auto;
     margin-right: auto;
@@ -1755,7 +1759,7 @@ body {
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 991px) {
     .hero-section {
-        padding: 80px 0 60px;
+        padding: 56px 0 48px;
         min-height: auto;
         overflow-x: hidden;
     }
@@ -1787,7 +1791,7 @@ body {
     }
 
     .hero-section {
-        padding-bottom: 120px !important;
+        padding-bottom: 92px !important;
     }
 
     /* ── Root-cause fix: Bootstrap row gutter has negative margins which

@@ -149,7 +149,7 @@ document.addEventListener('click', function (e) {
         cdEl.className = 'demo-countdown-display' + (cls ? ' ' + cls : '');
         if (fireEl) { fireEl.classList.remove('active'); fireEl.style.display = ''; }
         if (winEl) { winEl.classList.remove('active'); winEl.style.display = ''; }
-        if (statusEl) statusEl.style.display = '';
+        if (statusEl) { statusEl.style.visibility = 'visible'; }
     }
 
     function showQueued() {
@@ -165,13 +165,13 @@ document.addEventListener('click', function (e) {
     }
 
     function showFire() {
-        if (statusEl) statusEl.style.display = 'none';
+        if (statusEl) statusEl.style.visibility = 'hidden';
         if (winEl) { winEl.classList.remove('active'); winEl.style.display = ''; }
         if (fireEl) { fireEl.style.display = 'flex'; void fireEl.offsetWidth; fireEl.classList.add('active'); }
     }
 
     function showWin() {
-        if (statusEl) statusEl.style.display = 'none';
+        if (statusEl) statusEl.style.visibility = 'hidden';
         if (fireEl) { fireEl.classList.remove('active'); fireEl.style.display = ''; }
         if (winPriceEl) winPriceEl.textContent = items[itemIndex].bid;
         if (winEl) { winEl.style.display = 'flex'; void winEl.offsetWidth; winEl.classList.add('active'); }
@@ -190,7 +190,7 @@ document.addEventListener('click', function (e) {
             /* reset for next item */
             if (winEl) { winEl.classList.remove('active'); winEl.style.display = ''; }
             if (fireEl) { fireEl.classList.remove('active'); fireEl.style.display = ''; }
-            if (statusEl) { statusEl.style.display = ''; statusEl.className = 'demo-status-bar'; }
+            if (statusEl) { statusEl.style.visibility = 'visible'; statusEl.className = 'demo-status-bar'; }
             itemIndex = (itemIndex + 1) % items.length;
             setItem(itemIndex);
             step = 0;

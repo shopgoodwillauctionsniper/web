@@ -396,6 +396,8 @@ body {
     overflow: hidden;
     max-width: 450px;
     margin: 0 auto;
+    /* fixed height so internal animation never causes layout shift */
+    min-height: 320px;
 }
 
 .snipe-demo-card::before {

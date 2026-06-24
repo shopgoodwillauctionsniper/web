@@ -1784,9 +1784,8 @@ body {
         padding-bottom: 120px !important;
     }
 
-    /* ── Root-cause fix: Bootstrap g-5 row has margin: 0 -24px which
-       expands the row to 414px on a 390px viewport, causing the
-       heroDemoWrap column to overflow 12px on each side.
+    /* ── Root-cause fix: Bootstrap row gutter has negative margins which
+       expand the row beyond the viewport width on mobile.
        Zero the gutter on the hero row at mobile. ── */
     .hero-section .hero-content .row {
         --bs-gutter-x: 0 !important;

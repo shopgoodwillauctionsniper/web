@@ -67,9 +67,18 @@ html {
     scrollbar-color: var(--c-blue) transparent;
 }
 
-html::-webkit-scrollbar { width: 5px; }
-html::-webkit-scrollbar-track { background: transparent; }
-html::-webkit-scrollbar-thumb { background: var(--c-blue); border-radius: 3px; }
+html::-webkit-scrollbar {
+    width: 5px;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--c-blue);
+    border-radius: 3px;
+}
 
 body {
     font-family: var(--f-sans);
@@ -397,6 +406,7 @@ body {
 #heroDemoWrap * {
     cursor: zoom-in !important;
 }
+
 /* But not on the demo card contents — those should feel interactive */
 .snipe-demo-card * {
     cursor: zoom-in !important;
@@ -409,8 +419,7 @@ body {
     -webkit-backdrop-filter: blur(14px);
     border: 1px solid var(--c-border);
     border-radius: var(--r-xl);
-    /* bottom = statusBarH(40) + bottom-inset(14) + gap(10) = 64px so bar never overlaps content */
-    padding: 16px 20px 64px;
+    padding: 14px 16px;
     box-shadow: var(--sh-card), var(--sh-glow);
     /* Absolutely centered over the screenshot img */
     position: absolute;
@@ -418,6 +427,9 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     /* smaller foreground so the screenshot remains the visual wrapper */
     width: 64%;
     max-width: 360px;
@@ -439,8 +451,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 18px;
-    padding-bottom: 14px;
+    margin-bottom: 0;
+    padding-bottom: 10px;
     border-bottom: 1px solid var(--c-border);
 }
 
@@ -497,7 +509,7 @@ body {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 .demo-item-thumb {
@@ -604,11 +616,8 @@ body {
     align-items: center;
     gap: 4px;
     flex-wrap: wrap;
-    /* absolutely positioned so it never affects card height */
-    position: absolute;
-    bottom: 14px;
-    left: 20px;
-    right: 20px;
+    position: static;
+    min-height: 38px;
 }
 
 .demo-status-bar.firing {
@@ -1697,6 +1706,11 @@ body {
     padding: 14px;
 }
 
+.mobile-sticky-cta.is-hidden {
+    transform: translateY(110%);
+    pointer-events: none;
+}
+
 /* ── Scroll Fade-up Animations ─────────────────────────────── */
 .fade-up {
     opacity: 0;
@@ -1806,6 +1820,7 @@ body {
         box-sizing: border-box !important;
         overflow: hidden !important;
     }
+
     #heroDemoBgImg {
         width: 100% !important;
         height: auto !important;
@@ -1813,23 +1828,20 @@ body {
 
     /* Card: absolutely centered, narrower than wrapper so screenshot shows all around */
     .snipe-demo-card {
-        width: 58% !important;
+        width: 64% !important;
         max-width: none !important;
         min-width: 0 !important;
         margin: 0 !important;
-        /* Equal top/bottom so content is visually centred in the card box */
-        /* bottom reserves space for absolutely-positioned status bar */
-        padding: 7px 9px 34px !important;
+        padding: 8px 10px !important;
         min-height: auto !important;
         box-sizing: border-box !important;
+        gap: 6px !important;
     }
 
     .demo-status-bar {
-        bottom: 6px !important;
-        left: 10px !important;
-        right: 10px !important;
-        font-size: .58rem !important;
-        padding: 3px 5px !important;
+        min-height: 26px !important;
+        font-size: .62rem !important;
+        padding: 4px 6px !important;
     }
 
     .demo-header {
@@ -1839,13 +1851,15 @@ body {
     }
 
     .demo-site-label {
-        display: none !important;
+        display: flex !important;
+        font-size: .58rem !important;
+        padding: 2px 6px !important;
     }
 
     .demo-sniper-label {
         margin-left: auto !important;
-        font-size: .62rem !important;
-        padding: 3px 8px !important;
+        font-size: .58rem !important;
+        padding: 2px 6px !important;
     }
 
     .demo-item-row {
@@ -1853,14 +1867,20 @@ body {
         gap: 6px !important;
     }
 
-    /* Hide thumbnail to reduce card height so it fits within aspect-ratio wrapper */
     .demo-item-thumb {
-        display: none !important;
+        display: flex !important;
+        width: 28px !important;
+        height: 28px !important;
+        font-size: .95rem !important;
     }
 
     .demo-item-name {
         max-width: 130px;
-        font-size: .66rem;
+        font-size: .68rem;
+    }
+
+    .demo-item-bid {
+        font-size: .62rem;
     }
 
     .demo-countdown-area {
@@ -1874,12 +1894,14 @@ body {
     }
 
     .demo-countdown-display {
-        font-size: 1.04rem;
+        font-size: 1.1rem;
     }
 
-    /* Hide sub-label to save height */
     .demo-countdown-sub {
-        display: none !important;
+        display: block !important;
+        font-size: .48rem !important;
+        margin-top: 2px !important;
+        letter-spacing: .06em !important;
     }
 
     .demo-win-text {

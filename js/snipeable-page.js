@@ -242,3 +242,24 @@ document.addEventListener('click', function (e) {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(); }
     });
 })();
+
+/* ── Mobile Sticky CTA Visibility ─────────────────────────── */
+(function initMobileStickyCtaVisibility() {
+    var cta = document.querySelector('.mobile-sticky-cta');
+    var hero = document.querySelector('.hero-section');
+    if (!cta || !hero) return;
+
+    function update() {
+        if (window.innerWidth > 767) {
+            cta.classList.remove('is-hidden');
+            return;
+        }
+        var heroRect = hero.getBoundingClientRect();
+        var heroVisible = heroRect.bottom > window.innerHeight * 0.25;
+        cta.classList.toggle('is-hidden', heroVisible);
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+})();

@@ -369,7 +369,7 @@ body {
     /* shrink-wrap to card + padding — prevents row-stretch adding phantom height */
     height: fit-content !important;
     align-self: flex-start !important;
-    padding: 48px 32px !important;
+    padding: 48px 32px 28px !important;
     display: flex;
     align-items: center;
     justify-content: center;

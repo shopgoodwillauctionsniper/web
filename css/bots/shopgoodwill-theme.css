@@ -361,16 +361,15 @@ body {
     border-radius: var(--r-xl);
     overflow: hidden;
     cursor: zoom-in;
-    /* only box-shadow animates — no transform, no opacity, no layout transitions */
     transition: box-shadow .25s var(--ease) !important;
     transform: none !important;
     opacity: 1 !important;
     will-change: box-shadow;
     box-shadow: var(--sh-glow);
-    padding-top: 48px !important;
-    padding-bottom: 48px !important;
-    padding-left: 32px !important;
-    padding-right: 32px !important;
+    /* lock to content height so Bootstrap row-stretch can't make it taller */
+    height: fit-content !important;
+    align-self: center !important;
+    padding: 48px 32px !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1706,6 +1705,51 @@ body {
 @media (max-width: 767px) {
     .mobile-sticky-cta {
         display: block;
+    }
+
+    /* hero: center-align when stacked */
+    .hero-section .col-lg-6:first-child {
+        text-align: center;
+    }
+
+    .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-note {
+        text-align: center;
+    }
+
+    .platform-badge {
+        display: inline-flex;
+    }
+
+    /* hero demo wrapper: fit full width, reduce padding */
+    #heroDemoWrap {
+        width: 100% !important;
+        padding: 28px 16px !important;
+        box-sizing: border-box !important;
+    }
+
+    .snipe-demo-card {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin-top: 0 !important;
+        padding: 18px !important;
+        min-height: auto !important;
+    }
+
+    .demo-countdown-display {
+        font-size: 1.7rem;
+    }
+
+    .demo-win-text {
+        font-size: 1.5rem;
+    }
+
+    .demo-win-trophy {
+        font-size: 2.8rem;
     }
 
     /* footer stacks on mobile — center-align everything */

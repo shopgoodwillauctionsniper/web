@@ -1574,6 +1574,12 @@ body {
     padding: 18px 24px;
     border: none;
     box-shadow: none !important;
+    text-align: center;
+    justify-content: center;
+}
+
+.accordion-button::after {
+    margin-left: 12px;
 }
 
 .accordion-button:not(.collapsed) {
@@ -1587,6 +1593,7 @@ body {
     color: var(--c-text-dark-2);
     line-height: 1.72;
     background: rgba(33, 150, 243, .02) !important;
+    text-align: center;
 }
 
 /* ── Final CTA ─────────────────────────────────────────────── */

@@ -1248,7 +1248,7 @@ body {
 }
 
 .comparison-table tbody td {
-    color: var(--c-text-dark-2) !important;
+    color: var(--c-text-soft) !important;
     border-color: var(--c-border) !important;
     padding: 13px 18px;
     font-size: .86rem;
@@ -1261,11 +1261,11 @@ body {
     border-left: 2px solid rgba(33, 150, 243, .25) !important;
     border-right: 2px solid rgba(33, 150, 243, .25) !important;
     font-weight: 600;
-    color: var(--c-blue-dark) !important;
+    color: var(--c-text) !important;
 }
 
 .comparison-table tbody td:first-child {
-    color: var(--c-text-dark) !important;
+    color: var(--c-text) !important;
     font-weight: 600;
 }
 

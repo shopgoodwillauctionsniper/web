@@ -369,12 +369,13 @@ body {
     transition: box-shadow .25s var(--ease) !important;
     transform: none !important;
     opacity: 1 !important;
-    will-change: box-shadow;
-    box-shadow: var(--sh-glow);
+    will-change: auto;
+    box-shadow: none;
     align-self: flex-start !important;
-    padding: 0;
+    /* Zero all margin/padding — Bootstrap g-5 gutter injects margin-top: 48px */
+    padding: 0 !important;
+    margin: 0 !important;
     display: block;
-    /* No background colour — screenshot img covers the entire container */
 }
 
 /* The screenshot img IS the container — it fills wrapper width, height auto from ratio */
@@ -388,7 +389,7 @@ body {
 }
 
 #heroDemoWrap:hover {
-    box-shadow: 0 0 70px rgba(33, 150, 243, .25);
+    box-shadow: none;
 }
 
 /* Zoom cursor on wrapper and all children */
@@ -403,9 +404,9 @@ body {
 
 /* ── Snipe Demo Card (animated UI layer, absolutely centered over screenshot) ── */
 .snipe-demo-card {
-    background: rgba(9, 22, 44, .88);
-    backdrop-filter: blur(28px);
-    -webkit-backdrop-filter: blur(28px);
+    background: rgba(9, 22, 44, .62);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border: 1px solid var(--c-border);
     border-radius: var(--r-xl);
     /* bottom = statusBarH(40) + bottom-inset(14) + gap(10) = 64px so bar never overlaps content */
@@ -417,9 +418,9 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
-    /* 76% wrapper width — screenshot visible ~12% on each side */
-    width: 76%;
-    max-width: 420px;
+    /* smaller foreground so the screenshot remains the visual wrapper */
+    width: 64%;
+    max-width: 360px;
     margin: 0;
 }
 
@@ -641,12 +642,12 @@ body {
     justify-content: center;
     flex-direction: column;
     gap: 8px;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px);
 }
 
 .demo-win-overlay.active {
     display: flex;
-    background: rgba(0, 18, 0, .78);
+    background: rgba(0, 18, 0, .52);
     border: 1px solid rgba(0, 200, 83, .4);
     animation: win-burst .45s cubic-bezier(.34, 1.56, .64, 1);
 }
@@ -693,7 +694,7 @@ body {
 
 .demo-fire-overlay.active {
     display: flex;
-    background: rgba(4, 20, 55, .86);
+    background: rgba(4, 20, 55, .56);
     font-size: 1.55rem;
     font-weight: 800;
     color: var(--c-blue);
@@ -705,11 +706,11 @@ body {
 
     0%,
     100% {
-        background: rgba(4, 20, 55, .86);
+        background: rgba(4, 20, 55, .56);
     }
 
     50% {
-        background: rgba(33, 150, 243, .28);
+        background: rgba(33, 150, 243, .18);
     }
 }
 
@@ -1758,6 +1759,10 @@ body {
         display: block;
     }
 
+    .hero-section {
+        padding-bottom: 120px !important;
+    }
+
     /* ── Root-cause fix: Bootstrap g-5 row has margin: 0 -24px which
        expands the row to 414px on a 390px viewport, causing the
        heroDemoWrap column to overflow 12px on each side.
@@ -1808,28 +1813,39 @@ body {
 
     /* Card: absolutely centered, narrower than wrapper so screenshot shows all around */
     .snipe-demo-card {
-        width: 80% !important;
+        width: 58% !important;
         max-width: none !important;
         min-width: 0 !important;
         margin: 0 !important;
         /* Equal top/bottom so content is visually centred in the card box */
         /* bottom reserves space for absolutely-positioned status bar */
-        padding: 10px 12px 58px !important;
+        padding: 7px 9px 34px !important;
         min-height: auto !important;
         box-sizing: border-box !important;
     }
 
     .demo-status-bar {
-        bottom: 8px !important;
-        left: 12px !important;
-        right: 12px !important;
-        font-size: .72rem !important;
-        padding: 5px 8px !important;
+        bottom: 6px !important;
+        left: 10px !important;
+        right: 10px !important;
+        font-size: .58rem !important;
+        padding: 3px 5px !important;
     }
 
     .demo-header {
-        margin-bottom: 6px !important;
-        padding-bottom: 6px !important;
+        margin-bottom: 5px !important;
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
+    }
+
+    .demo-site-label {
+        display: none !important;
+    }
+
+    .demo-sniper-label {
+        margin-left: auto !important;
+        font-size: .62rem !important;
+        padding: 3px 8px !important;
     }
 
     .demo-item-row {
@@ -1843,8 +1859,8 @@ body {
     }
 
     .demo-item-name {
-        max-width: 200px;
-        font-size: .82rem;
+        max-width: 130px;
+        font-size: .66rem;
     }
 
     .demo-countdown-area {
@@ -1854,11 +1870,11 @@ body {
     .demo-countdown-ring {
         min-width: 0 !important;
         width: 100% !important;
-        padding: 6px 10px !important;
+        padding: 5px 8px !important;
     }
 
     .demo-countdown-display {
-        font-size: 1.45rem;
+        font-size: 1.04rem;
     }
 
     /* Hide sub-label to save height */
@@ -1867,11 +1883,11 @@ body {
     }
 
     .demo-win-text {
-        font-size: 1.25rem;
+        font-size: .9rem;
     }
 
     .demo-win-trophy {
-        font-size: 2.2rem;
+        font-size: 1.45rem;
     }
 
     /* footer stacks on mobile — center-align everything */

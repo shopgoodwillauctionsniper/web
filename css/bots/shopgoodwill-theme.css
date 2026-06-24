@@ -1841,7 +1841,7 @@ body {
 
     .hero-section {
         padding-top: 42px !important;
-        padding-bottom: 36px !important;
+        padding-bottom: 22px !important;
     }
 
     .hero-copy {
@@ -1888,6 +1888,7 @@ body {
         max-width: 100% !important;
         min-width: 0 !important;
         margin-top: 18px !important;
+        margin-bottom: 0 !important;
         box-sizing: border-box !important;
         overflow: hidden !important;
     }

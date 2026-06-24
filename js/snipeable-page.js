@@ -210,7 +210,7 @@ document.addEventListener('click', function (e) {
 
 /* ── Snipe Demo Card Lightbox ──────────────────────────────── */
 (function initDemoCardLightbox() {
-    var card = document.querySelector('.snipe-demo-card');
+    var card = document.getElementById('heroDemoWrap');
     if (!card) return;
 
     function openLightbox() {

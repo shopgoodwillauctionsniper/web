@@ -369,7 +369,7 @@ body {
     /* shrink-wrap to card + padding — prevents row-stretch adding phantom height */
     height: fit-content !important;
     align-self: flex-start !important;
-    padding: 48px 32px 28px !important;
+    padding: 48px 32px !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -392,7 +392,7 @@ body {
     -webkit-backdrop-filter: blur(28px);
     border: 1px solid var(--c-border);
     border-radius: var(--r-xl);
-    padding: 26px;
+    padding: 26px 26px 68px;
     box-shadow: var(--sh-card), var(--sh-glow);
     position: relative;
     overflow: hidden;
@@ -580,6 +580,11 @@ body {
     align-items: center;
     gap: 4px;
     flex-wrap: wrap;
+    /* absolutely positioned so it never affects card height */
+    position: absolute;
+    bottom: 26px;
+    left: 26px;
+    right: 26px;
 }
 
 .demo-status-bar.firing {
@@ -1728,47 +1733,80 @@ body {
         display: inline-flex;
     }
 
-    /* hero demo wrapper: shrink to viewport width */
+    /* hero demo wrapper: constrain to viewport, show screenshot on all sides */
     #heroDemoWrap {
         width: 100% !important;
         max-width: 100% !important;
         min-width: 0 !important;
-        padding: 24px 14px !important;
+        /* padding gives screenshot breathing room around the card */
+        padding: 22px 18px !important;
         box-sizing: border-box !important;
         overflow: hidden !important;
-        align-self: stretch !important;
+        /* flex-start so it doesn't stretch taller than its content */
+        align-self: flex-start !important;
     }
 
     .snipe-demo-card {
+        /* narrower than wrapper so screenshot is visible left+right */
         width: 100% !important;
         max-width: 100% !important;
         min-width: 0 !important;
         margin: 0 !important;
-        padding: 16px !important;
+        /* card padding reduced; status bar stays at absolute bottom: 14px */
+        padding: 14px 14px 58px !important;
         min-height: auto !important;
         box-sizing: border-box !important;
     }
 
+    .demo-status-bar {
+        bottom: 14px !important;
+        left: 14px !important;
+        right: 14px !important;
+        font-size: .75rem !important;
+        padding: 7px 10px !important;
+    }
+
+    .demo-header {
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+    }
+
+    .demo-item-row {
+        margin-bottom: 12px;
+        gap: 10px;
+    }
+
+    .demo-item-thumb {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
     .demo-item-name {
-        max-width: 160px;
-        font-size: .88rem;
+        max-width: 140px;
+        font-size: .82rem;
+    }
+
+    .demo-countdown-area {
+        margin-bottom: 12px;
     }
 
     .demo-countdown-ring {
-        min-width: 130px;
-        padding: 10px 18px;
+        min-width: 0;
+        width: 100%;
+        padding: 10px 14px;
     }
 
     .demo-countdown-display {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
     }
 
     .demo-win-text {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
     }
 
     .demo-win-trophy {
-        font-size: 2.8rem;
+        font-size: 2.4rem;
     }
 
     /* footer stacks on mobile — center-align everything */

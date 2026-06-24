@@ -356,17 +356,17 @@ body {
 #heroDemoWrap {
     background-image: url('/img/bots/shopgoodwill-sniper.png');
     background-size: cover;
-    background-position: center top;
+    background-position: center center;
     background-repeat: no-repeat;
     border-radius: var(--r-xl);
     overflow: hidden;
     cursor: zoom-in;
-    /* only transition box-shadow — no transform/opacity so modal open/close won't glitch */
-    transition: box-shadow .25s var(--ease) !important;
-    transform: none !important;
-    opacity: 1 !important;
+    transition: box-shadow .25s var(--ease);
     box-shadow: var(--sh-glow);
     padding: 48px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #heroDemoWrap:hover {

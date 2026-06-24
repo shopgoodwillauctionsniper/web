@@ -214,13 +214,26 @@ document.addEventListener('click', function (e) {
     if (!card) return;
 
     function openLightbox() {
-        /* reuse the modal created by image-lightbox.js */
         var modal = document.getElementById('imageLightboxModal');
         var img = document.getElementById('lightboxImage');
         if (!modal || !img) return;
         img.src = '/img/bots/shopgoodwill-sniper.png';
         img.alt = 'ShopGoodwill Sniper application screenshot';
+
+        /* Lock wrapper pixel dimensions so Bootstrap's body padding-right
+           compensation (scrollbar removal) doesn't cause background-size:cover
+           to reflow and glitch the screenshot */
+        card.style.width = card.offsetWidth + 'px';
+        card.style.height = card.offsetHeight + 'px';
+
         var bsModal = bootstrap.Modal.getOrCreateInstance(modal);
+
+        modal.addEventListener('hidden.bs.modal', function unlock() {
+            card.style.width = '';
+            card.style.height = '';
+            modal.removeEventListener('hidden.bs.modal', unlock);
+        });
+
         bsModal.show();
     }
 

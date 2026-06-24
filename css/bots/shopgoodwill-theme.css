@@ -367,7 +367,10 @@ body {
     opacity: 1 !important;
     will-change: box-shadow;
     box-shadow: var(--sh-glow);
-    padding: 48px 32px;
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1229,11 +1232,20 @@ body {
 }
 
 /* ── Comparison Table ──────────────────────────────────────── */
-.comparison-table {
+.table-responsive:has(.comparison-table) {
     border-radius: var(--r-lg);
-    overflow: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     box-shadow: var(--sh-card);
-    border: 1px solid var(--c-border) !important;
+    border: 1px solid var(--c-border);
+}
+
+.comparison-table {
+    border-radius: 0;
+    overflow: visible;
+    box-shadow: none;
+    border: none !important;
+    min-width: 560px;
 }
 
 .comparison-table thead {
@@ -1244,8 +1256,9 @@ body {
     color: var(--c-text) !important;
     font-weight: 700;
     border-color: var(--c-border) !important;
-    padding: 16px 18px;
-    font-size: .9rem;
+    padding: 12px 14px;
+    font-size: .86rem;
+    white-space: nowrap;
     background: var(--c-bg-3) !important;
 }
 
@@ -1284,8 +1297,8 @@ body {
 .comparison-table tbody td {
     color: var(--c-text-soft) !important;
     border-color: var(--c-border) !important;
-    padding: 13px 18px;
-    font-size: .86rem;
+    padding: 11px 14px;
+    font-size: .84rem;
     vertical-align: middle;
     background: inherit !important;
 }
@@ -1695,6 +1708,31 @@ body {
         display: block;
     }
 
+    /* footer stacks on mobile — center-align everything */
+    .site-footer .col-lg-4,
+    .site-footer .col-lg-2,
+    .site-footer .col-lg-3 {
+        text-align: center;
+    }
+
+    .footer-brand {
+        justify-content: center;
+    }
+
+    .footer-desc {
+        margin: 0 auto;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-legal {
+        text-align: center;
+    }
+
     body {
         padding-bottom: 66px;
     }
@@ -1731,6 +1769,11 @@ body {
 
     .pricing-card {
         padding: 32px 24px;
+        text-align: center;
+    }
+
+    .pricing-features li {
+        justify-content: center;
     }
 }
 

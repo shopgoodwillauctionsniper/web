@@ -1252,10 +1252,30 @@ body {
     border: none !important;
     min-width: 560px;
     margin-bottom: 0;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
 }
 
 .comparison-table thead {
     background: var(--c-bg-3) !important;
+}
+
+/* Round the top two header corners to match the wrapper */
+.comparison-table thead th:first-child {
+    border-top-left-radius: var(--r-lg);
+}
+
+.comparison-table thead th:last-child {
+    border-top-right-radius: var(--r-lg);
+}
+
+/* Round the bottom two body corners to match the wrapper */
+.comparison-table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: var(--r-lg);
+}
+
+.comparison-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: var(--r-lg);
 }
 
 .comparison-table thead th {
@@ -1750,80 +1770,89 @@ body {
         display: inline-flex;
     }
 
-    /* hero demo wrapper: constrain to viewport, show screenshot on all sides */
+    /* ── Hero Demo Wrap: force image's exact aspect ratio so background-size:contain
+       fills the wrapper perfectly — zero cropping, zero letterboxing ──────────── */
     #heroDemoWrap {
         width: 100% !important;
         max-width: 100% !important;
         min-width: 0 !important;
-        /* padding gives screenshot breathing room around the card */
-        padding: 22px 18px !important;
+        /* Force wrapper to screenshot's natural ratio (3584×2274 = 1.5761).
+           With background-size:contain the image fills exactly — no crop, no bars. */
+        height: auto !important;
+        aspect-ratio: 3584 / 2274 !important;
+        background-size: contain !important;
+        /* No padding on wrapper — card uses margin to create spacing */
+        padding: 0 !important;
         box-sizing: border-box !important;
         overflow: hidden !important;
-        /* flex-start so it doesn't stretch taller than its content */
         align-self: flex-start !important;
     }
 
+    /* Card is narrower than wrapper, centered by flex parent → screenshot visible all around */
     .snipe-demo-card {
-        /* narrower than wrapper so screenshot is visible left+right */
-        width: 100% !important;
-        max-width: 100% !important;
+        width: calc(100% - 28px) !important;
+        max-width: calc(100% - 28px) !important;
         min-width: 0 !important;
-        margin: 0 !important;
-        /* card padding reduced; status bar stays at absolute bottom: 14px */
-        padding: 14px 14px 58px !important;
+        /* auto top/bottom margin centers card vertically within the wrapper */
+        margin: auto 14px !important;
+        padding: 8px 12px 34px !important;
         min-height: auto !important;
         box-sizing: border-box !important;
     }
 
     .demo-status-bar {
-        bottom: 14px !important;
-        left: 14px !important;
-        right: 14px !important;
-        font-size: .75rem !important;
-        padding: 7px 10px !important;
+        bottom: 8px !important;
+        left: 12px !important;
+        right: 12px !important;
+        font-size: .72rem !important;
+        padding: 5px 8px !important;
     }
 
     .demo-header {
-        margin-bottom: 12px;
-        padding-bottom: 10px;
+        margin-bottom: 6px !important;
+        padding-bottom: 6px !important;
     }
 
     .demo-item-row {
-        margin-bottom: 12px;
-        gap: 10px;
+        margin-bottom: 6px !important;
+        gap: 6px !important;
     }
 
+    /* Hide thumbnail to reduce card height so it fits within aspect-ratio wrapper */
     .demo-item-thumb {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
+        display: none !important;
     }
 
     .demo-item-name {
-        max-width: 140px;
+        max-width: 200px;
         font-size: .82rem;
     }
 
     .demo-countdown-area {
-        margin-bottom: 12px;
+        margin-bottom: 6px !important;
     }
 
     .demo-countdown-ring {
-        min-width: 0;
-        width: 100%;
-        padding: 10px 14px;
+        min-width: 0 !important;
+        width: 100% !important;
+        padding: 6px 10px !important;
     }
 
     .demo-countdown-display {
-        font-size: 1.6rem;
+        font-size: 1.45rem;
+    }
+
+    /* Hide sub-label to save height */
+    .demo-countdown-sub {
+        display: none !important;
     }
 
     .demo-win-text {
-        font-size: 1.35rem;
+        font-size: 1.25rem;
     }
 
     .demo-win-trophy {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
     }
 
     /* footer stacks on mobile — center-align everything */

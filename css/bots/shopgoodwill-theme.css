@@ -194,7 +194,7 @@ body {
     align-items: center;
     background: linear-gradient(160deg, #040e1c 0%, #071a30 40%, #0a1e35 70%, #060f1c 100%);
     overflow: hidden;
-    padding: 28px 0 24px;
+    padding: 36px 0 32px;
 }
 
 .hero-section::before {
@@ -1784,7 +1784,7 @@ body {
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 991px) {
     .hero-section {
-        padding: 28px 0 24px;
+        padding: 32px 0 30px;
         min-height: auto;
         overflow-x: hidden;
     }
@@ -1816,8 +1816,8 @@ body {
     }
 
     .hero-section {
-        padding-top: 36px !important;
-        padding-bottom: 28px !important;
+        padding-top: 42px !important;
+        padding-bottom: 36px !important;
     }
 
     .hero-copy {

@@ -355,9 +355,14 @@ body {
 /* ── Hero Demo Outer Wrapper (screenshot background) ──────── */
 #heroDemoWrap {
     background-image: url('/img/bots/shopgoodwill-sniper.png');
-    background-size: cover;
+    /* contain + matching aspect-ratio = image fills wrapper exactly, no crop, no bars */
+    background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+    /* Force wrapper to screenshot's exact ratio (3584×2274) at ALL sizes.
+       Do NOT set width here — Bootstrap col-lg-6 sets desktop width to 50%. */
+    aspect-ratio: 3584 / 2274;
+    height: auto;
     border-radius: var(--r-xl);
     overflow: hidden;
     cursor: zoom-in;
@@ -366,10 +371,8 @@ body {
     opacity: 1 !important;
     will-change: box-shadow;
     box-shadow: var(--sh-glow);
-    /* shrink-wrap to card + padding — prevents row-stretch adding phantom height */
-    height: fit-content !important;
     align-self: flex-start !important;
-    padding: 48px 32px !important;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -392,12 +395,15 @@ body {
     -webkit-backdrop-filter: blur(28px);
     border: 1px solid var(--c-border);
     border-radius: var(--r-xl);
-    padding: 26px 26px 68px;
+    /* compact padding so card fits within aspect-ratio-constrained wrapper height */
+    padding: 18px 20px 54px;
     box-shadow: var(--sh-card), var(--sh-glow);
     position: relative;
     overflow: hidden;
-    max-width: 450px;
-    margin: 0 auto;
+    /* 76% width leaves 12% screenshot visible on each side */
+    width: 76%;
+    max-width: 420px;
+    margin: auto;
 }
 
 .snipe-demo-card::before {
@@ -582,9 +588,9 @@ body {
     flex-wrap: wrap;
     /* absolutely positioned so it never affects card height */
     position: absolute;
-    bottom: 26px;
-    left: 26px;
-    right: 26px;
+    bottom: 16px;
+    left: 20px;
+    right: 20px;
 }
 
 .demo-status-bar.firing {
@@ -1770,22 +1776,13 @@ body {
         display: inline-flex;
     }
 
-    /* ── Hero Demo Wrap: force image's exact aspect ratio so background-size:contain
-       fills the wrapper perfectly — zero cropping, zero letterboxing ──────────── */
+    /* Mobile: base rule handles aspect-ratio/contain/padding — just constrain width */
     #heroDemoWrap {
         width: 100% !important;
         max-width: 100% !important;
         min-width: 0 !important;
-        /* Force wrapper to screenshot's natural ratio (3584×2274 = 1.5761).
-           With background-size:contain the image fills exactly — no crop, no bars. */
-        height: auto !important;
-        aspect-ratio: 3584 / 2274 !important;
-        background-size: contain !important;
-        /* No padding on wrapper — card uses margin to create spacing */
-        padding: 0 !important;
         box-sizing: border-box !important;
         overflow: hidden !important;
-        align-self: flex-start !important;
     }
 
     /* Card is narrower than wrapper, centered by flex parent → screenshot visible all around */

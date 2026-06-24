@@ -353,9 +353,12 @@ body {
 
 /* ── Snipe Demo Card ───────────────────────────────────────── */
 .snipe-demo-card {
-    background: rgba(9, 22, 44, .88);
-    backdrop-filter: blur(28px);
-    -webkit-backdrop-filter: blur(28px);
+    background-image: url('/img/bots/shopgoodwill-sniper.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
     border: 1px solid var(--c-border);
     border-radius: var(--r-xl);
     padding: 26px;
@@ -364,9 +367,34 @@ body {
     overflow: hidden;
     max-width: 450px;
     margin: 0 auto;
+    cursor: zoom-in;
+    transition: var(--trans);
 }
 
+.snipe-demo-card:hover {
+    box-shadow: var(--sh-card-h), var(--sh-glow);
+    border-color: var(--c-blue-border);
+}
+
+/* dark overlay so animated UI content stays readable over the screenshot */
 .snipe-demo-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 14, 30, .82);
+    border-radius: inherit;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* push all direct children above the overlay */
+.snipe-demo-card>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* top-edge shine line (was ::before, moved here) */
+.snipe-demo-card::after {
     content: '';
     position: absolute;
     top: 0;
@@ -375,6 +403,8 @@ body {
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--c-blue), transparent);
     opacity: .55;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .demo-header {

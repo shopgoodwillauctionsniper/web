@@ -207,3 +207,25 @@ document.addEventListener('click', function (e) {
     setItem(itemIndex);
     setTimeout(run, 1200);
 })();
+
+/* ── Snipe Demo Card Lightbox ──────────────────────────────── */
+(function initDemoCardLightbox() {
+    var card = document.querySelector('.snipe-demo-card');
+    if (!card) return;
+
+    function openLightbox() {
+        /* reuse the modal created by image-lightbox.js */
+        var modal = document.getElementById('imageLightboxModal');
+        var img = document.getElementById('lightboxImage');
+        if (!modal || !img) return;
+        img.src = '/img/bots/shopgoodwill-sniper.png';
+        img.alt = 'ShopGoodwill Sniper application screenshot';
+        var bsModal = bootstrap.Modal.getOrCreateInstance(modal);
+        bsModal.show();
+    }
+
+    card.addEventListener('click', openLightbox);
+    card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(); }
+    });
+})();

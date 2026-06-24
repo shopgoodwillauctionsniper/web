@@ -1715,9 +1715,26 @@ body {
         display: block;
     }
 
+    /* ── Root-cause fix: Bootstrap g-5 row has margin: 0 -24px which
+       expands the row to 414px on a 390px viewport, causing the
+       heroDemoWrap column to overflow 12px on each side.
+       Zero the gutter on the hero row at mobile. ── */
+    .hero-section .hero-content .row {
+        --bs-gutter-x: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .hero-section .hero-content .row>* {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
     /* hero: center-align when stacked */
     .hero-section .col-lg-6:first-child {
         text-align: center;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
     }
 
     .hero-desc {

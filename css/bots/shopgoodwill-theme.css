@@ -194,7 +194,7 @@ body {
     align-items: center;
     background: linear-gradient(160deg, #040e1c 0%, #071a30 40%, #0a1e35 70%, #060f1c 100%);
     overflow: hidden;
-    padding: 28px 0 16px;
+    padding: 28px 0 24px;
 }
 
 .hero-section::before {
@@ -1784,7 +1784,7 @@ body {
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 991px) {
     .hero-section {
-        padding: 28px 0 16px;
+        padding: 28px 0 24px;
         min-height: auto;
         overflow-x: hidden;
     }
@@ -1817,11 +1817,11 @@ body {
 
     .hero-section {
         padding-top: 36px !important;
-        padding-bottom: 20px !important;
+        padding-bottom: 28px !important;
     }
 
     .hero-copy {
-        gap: 22px;
+        gap: 20px;
     }
 
     /* ── Root-cause fix: Bootstrap row gutter has negative margins which

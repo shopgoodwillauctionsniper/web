@@ -1665,6 +1665,17 @@ body {
     background: var(--c-bg-2);
     border-top: 1px solid var(--c-border);
     padding: 64px 0 36px;
+    text-align: center;
+}
+
+.site-footer .row {
+    justify-content: center;
+}
+
+.site-footer .col-lg-4,
+.site-footer .col-lg-2,
+.site-footer .col-lg-3 {
+    text-align: center;
 }
 
 .footer-brand {
@@ -1676,6 +1687,7 @@ body {
     gap: 7px;
     margin-bottom: 12px;
     text-decoration: none;
+    justify-content: center;
 }
 
 .footer-brand:hover {
@@ -1687,6 +1699,8 @@ body {
     color: var(--c-text-muted);
     line-height: 1.65;
     max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .footer-heading {
@@ -1702,6 +1716,9 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer-links li {

@@ -62,7 +62,14 @@
 
 html {
     scroll-behavior: smooth;
+    /* thin scrollbar so it never masks content */
+    scrollbar-width: thin;
+    scrollbar-color: var(--c-blue) transparent;
 }
+
+html::-webkit-scrollbar { width: 5px; }
+html::-webkit-scrollbar-track { background: transparent; }
+html::-webkit-scrollbar-thumb { background: var(--c-blue); border-radius: 3px; }
 
 body {
     font-family: var(--f-sans);
@@ -354,15 +361,8 @@ body {
 /* ── Snipe Demo Card ───────────────────────────────────────── */
 /* ── Hero Demo Outer Wrapper (screenshot background) ──────── */
 #heroDemoWrap {
-    background-image: url('/img/bots/shopgoodwill-sniper.png');
-    /* contain + matching aspect-ratio = image fills wrapper exactly, no crop, no bars */
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    /* Force wrapper to screenshot's exact ratio (3584×2274) at ALL sizes.
-       Do NOT set width here — Bootstrap col-lg-6 sets desktop width to 50%. */
-    aspect-ratio: 3584 / 2274;
-    height: auto;
+    /* Wrapper is a relative container — the <img> drives natural height */
+    position: relative;
     border-radius: var(--r-xl);
     overflow: hidden;
     cursor: zoom-in;
@@ -373,37 +373,54 @@ body {
     box-shadow: var(--sh-glow);
     align-self: flex-start !important;
     padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    /* No background colour — screenshot img covers the entire container */
+}
+
+/* The screenshot img IS the container — it fills wrapper width, height auto from ratio */
+#heroDemoBgImg {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--r-xl);
+    pointer-events: none;
+    user-select: none;
 }
 
 #heroDemoWrap:hover {
     box-shadow: 0 0 70px rgba(33, 150, 243, .25);
 }
 
-/* force zoom-in cursor on every child so the whole area feels clickable */
+/* Zoom cursor on wrapper and all children */
 #heroDemoWrap,
 #heroDemoWrap * {
     cursor: zoom-in !important;
 }
+/* But not on the demo card contents — those should feel interactive */
+.snipe-demo-card * {
+    cursor: zoom-in !important;
+}
 
-/* ── Snipe Demo Card (animated UI layer) ───────────────────── */
+/* ── Snipe Demo Card (animated UI layer, absolutely centered over screenshot) ── */
 .snipe-demo-card {
     background: rgba(9, 22, 44, .88);
     backdrop-filter: blur(28px);
     -webkit-backdrop-filter: blur(28px);
     border: 1px solid var(--c-border);
     border-radius: var(--r-xl);
-    /* compact padding so card fits within aspect-ratio-constrained wrapper height */
-    padding: 18px 20px 54px;
+    /* bottom = statusBarH(40) + bottom-inset(14) + gap(10) = 64px so bar never overlaps content */
+    padding: 16px 20px 64px;
     box-shadow: var(--sh-card), var(--sh-glow);
-    position: relative;
+    /* Absolutely centered over the screenshot img */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     overflow: hidden;
-    /* 76% width leaves 12% screenshot visible on each side */
+    /* 76% wrapper width — screenshot visible ~12% on each side */
     width: 76%;
     max-width: 420px;
-    margin: auto;
+    margin: 0;
 }
 
 .snipe-demo-card::before {
@@ -517,7 +534,7 @@ body {
 
 .demo-countdown-area {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 .demo-countdown-ring {
@@ -588,7 +605,7 @@ body {
     flex-wrap: wrap;
     /* absolutely positioned so it never affects card height */
     position: absolute;
-    bottom: 16px;
+    bottom: 14px;
     left: 20px;
     right: 20px;
 }
@@ -1776,7 +1793,7 @@ body {
         display: inline-flex;
     }
 
-    /* Mobile: base rule handles aspect-ratio/contain/padding — just constrain width */
+    /* Mobile: wrapper constrained to viewport width; img drives height naturally */
     #heroDemoWrap {
         width: 100% !important;
         max-width: 100% !important;
@@ -1784,15 +1801,20 @@ body {
         box-sizing: border-box !important;
         overflow: hidden !important;
     }
+    #heroDemoBgImg {
+        width: 100% !important;
+        height: auto !important;
+    }
 
-    /* Card is narrower than wrapper, centered by flex parent → screenshot visible all around */
+    /* Card: absolutely centered, narrower than wrapper so screenshot shows all around */
     .snipe-demo-card {
-        width: calc(100% - 28px) !important;
-        max-width: calc(100% - 28px) !important;
+        width: 80% !important;
+        max-width: none !important;
         min-width: 0 !important;
-        /* auto top/bottom margin centers card vertically within the wrapper */
-        margin: auto 14px !important;
-        padding: 8px 12px 34px !important;
+        margin: 0 !important;
+        /* Equal top/bottom so content is visually centred in the card box */
+        /* bottom reserves space for absolutely-positioned status bar */
+        padding: 10px 12px 58px !important;
         min-height: auto !important;
         box-sizing: border-box !important;
     }

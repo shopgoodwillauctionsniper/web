@@ -274,6 +274,11 @@ body {
 }
 
 /* Hero Typography */
+/* Hero left column — centred at all viewport sizes */
+.hero-section .col-lg-6:first-child {
+    text-align: center;
+}
+
 .hero-title {
     font-size: clamp(2.3rem, 5vw, 3.75rem);
     font-weight: 900;
@@ -304,6 +309,8 @@ body {
     line-height: 1.7;
     margin-bottom: 36px;
     max-width: 510px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Download Button */

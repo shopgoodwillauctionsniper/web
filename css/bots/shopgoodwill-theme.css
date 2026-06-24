@@ -194,7 +194,7 @@ body {
     align-items: center;
     background: linear-gradient(160deg, #040e1c 0%, #071a30 40%, #0a1e35 70%, #060f1c 100%);
     overflow: hidden;
-    padding: 72px 0 56px;
+    padding: 48px 0;
 }
 
 .hero-section::before {
@@ -287,6 +287,22 @@ body {
     max-width: 540px;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.hero-copy>* {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.hero-platforms {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .hero-title {
@@ -295,14 +311,12 @@ body {
     letter-spacing: -.035em;
     line-height: 1.08;
     color: var(--c-text);
-    margin-bottom: 12px;
 }
 
 .hero-subtitle {
     font-size: clamp(1.25rem, 2.5vw, 1.7rem);
     font-weight: 700;
     color: var(--c-blue-light);
-    margin-bottom: 8px;
     letter-spacing: -.01em;
 }
 
@@ -310,14 +324,12 @@ body {
     font-size: .98rem;
     font-weight: 500;
     color: var(--c-text-muted);
-    margin-bottom: 20px;
 }
 
 .hero-desc {
     font-size: 1.08rem;
     color: var(--c-text-soft);
     line-height: 1.7;
-    margin-bottom: 36px;
     max-width: 510px;
     margin-left: auto;
     margin-right: auto;
@@ -381,7 +393,6 @@ body {
 .hero-note {
     font-size: .82rem;
     color: var(--c-text-muted);
-    margin-top: 18px;
 }
 
 /* ── Snipe Demo Card ───────────────────────────────────────── */
@@ -1074,6 +1085,7 @@ body {
     transition: var(--trans);
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .pricing-card:hover {
@@ -1142,6 +1154,8 @@ body {
 .pricing-features li {
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     gap: 10px;
     font-size: .88rem;
     color: var(--c-text-soft);
@@ -1205,6 +1219,7 @@ body {
     transition: var(--trans);
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .review-card:hover {
@@ -1227,11 +1242,14 @@ body {
     flex-grow: 1;
     margin-bottom: 20px;
     font-style: italic;
+    text-align: center;
 }
 
 .review-author {
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     gap: 12px;
 }
 
@@ -1759,7 +1777,7 @@ body {
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 991px) {
     .hero-section {
-        padding: 56px 0 48px;
+        padding: 44px 0;
         min-height: auto;
         overflow-x: hidden;
     }
@@ -1791,7 +1809,7 @@ body {
     }
 
     .hero-section {
-        padding-bottom: 92px !important;
+        padding-bottom: 76px !important;
     }
 
     /* ── Root-cause fix: Bootstrap row gutter has negative margins which

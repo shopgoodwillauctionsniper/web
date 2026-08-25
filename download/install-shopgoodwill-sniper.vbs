@@ -107,6 +107,7 @@ ps = "$ErrorActionPreference='Stop'" & vbCrLf & _
      "$launchVbs=Join-Path $dst 'launch.vbs'" & vbCrLf & _
      "Set-Content -Path $launchVbs -Encoding ASCII -Value 'Set sh=CreateObject(""WScript.Shell"")'" & vbCrLf & _
      "Add-Content -Path $launchVbs -Encoding ASCII -Value 'sh.Environment(""Process"").Item(""NODE_ENV"")=""production""'" & vbCrLf & _
+     "Add-Content -Path $launchVbs -Encoding ASCII -Value 'sh.Environment(""Process"").Item(""APP_LOG_LEVEL"")=""debug""'" & vbCrLf & _
      "Add-Content -Path $launchVbs -Encoding ASCII -Value ('sh.Run " & Chr(34) & Chr(34) & Chr(34) & "' + $nodePath + '" & Chr(34) & Chr(34) & " " & Chr(34) & Chr(34) & "' + $cliPath + '" & Chr(34) & Chr(34) & " " & Chr(34) & Chr(34) & "' + $appPath + '" & Chr(34) & Chr(34) & Chr(34) & ",0,False')" & vbCrLf & _
      "$desktop=[Environment]::GetFolderPath('Desktop')" & vbCrLf & _
      "$lnkPath=Join-Path $desktop '" & appName & ".lnk'" & vbCrLf & _

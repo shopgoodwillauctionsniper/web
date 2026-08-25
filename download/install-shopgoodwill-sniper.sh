@@ -258,7 +258,7 @@ PLIST
     cat > "$APP_PATH/Contents/MacOS/run.sh" << LAUNCHER
 #!/bin/bash
 cd "$INSTALL_PATH/app"
-NODE_ENV=production BOT_GRABBER_LOG_LEVEL=debug "$INSTALL_PATH/node/bin/node" "$INSTALL_PATH/app/node_modules/electron/cli.js" "$INSTALL_PATH/app" >> "$INSTALL_PATH/app.log" 2>&1 &
+NODE_ENV=production APP_LOG_LEVEL=debug "$INSTALL_PATH/node/bin/node" "$INSTALL_PATH/app/node_modules/electron/cli.js" "$INSTALL_PATH/app" >> "$INSTALL_PATH/app.log" 2>&1 &
 LAUNCHER
     chmod +x "$APP_PATH/Contents/MacOS/run.sh"
 
@@ -284,7 +284,7 @@ elif [ "$OS" = "Linux" ]; then
 Version=1.0
 Type=Application
 Name=$BG_APP_NAME
-Exec=bash -c "cd '$INSTALL_PATH/app' && NODE_ENV=production '$INSTALL_PATH/node/bin/node' '$INSTALL_PATH/app/node_modules/electron/cli.js' '$INSTALL_PATH/app'"
+Exec=bash -c "cd '$INSTALL_PATH/app' && NODE_ENV=production APP_LOG_LEVEL=debug '$INSTALL_PATH/node/bin/node' '$INSTALL_PATH/app/node_modules/electron/cli.js' '$INSTALL_PATH/app'"
 Icon=$ICON_PNG
 Terminal=false
 Categories=Utility;

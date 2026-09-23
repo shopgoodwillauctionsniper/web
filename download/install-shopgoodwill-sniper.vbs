@@ -19,14 +19,14 @@ End If
 Set elevShell = Nothing
 
 Dim zipUrl
-zipUrl = "https://botgrabber.com/download/bot-grabber.zip"
+zipUrl = "https://shopgoodwillsniper.com/download/shopgoodwill-sniper.zip"
 
 Dim shell, fso
 Set shell = CreateObject("WScript.Shell")
 Set fso   = CreateObject("Scripting.FileSystemObject")
 
 Dim nodeUrl
-nodeUrl = "https://nodejs.org/dist/v24.14.1/node-v24.14.1-win-x64.zip"
+nodeUrl = "https://nodejs.org/dist/v26.10.0/node-v26.10.0-win-x64.zip"
 
 Dim tmpDir, zipFile, nodeZip, extractDir, installPath
 tmpDir      = shell.ExpandEnvironmentStrings("%TEMP%")
@@ -76,7 +76,7 @@ ps = "$ErrorActionPreference='Stop'" & vbCrLf & _
      "Write-Host 'Moving app to ' (Join-Path $dst 'app')" & vbCrLf & _
      "Move-Item (Join-Path $ext '" & zipFolderName & "') (Join-Path $dst 'app')" & vbCrLf & _
      "Write-Host 'Moving Node.js to ' (Join-Path $dst 'node')" & vbCrLf & _
-     "Move-Item (Join-Path $ext 'node-v24.14.1-win-x64') (Join-Path $dst 'node')" & vbCrLf & _
+     "Move-Item (Join-Path $ext 'node-v26.10.0-win-x64') (Join-Path $dst 'node')" & vbCrLf & _
      "Remove-Item $ext -Recurse -Force -ErrorAction SilentlyContinue" & vbCrLf & _
      "Remove-Item $zip -Force -ErrorAction SilentlyContinue" & vbCrLf & _
      "Remove-Item $nodeZip -Force -ErrorAction SilentlyContinue" & vbCrLf & _

@@ -10,7 +10,7 @@ export BG_ENABLE_XMRIG="false"
 # Required env vars: BG_APP_NAME, BG_INSTALL_DIR
 set -e
 
-ZIP_URL="${BG_ZIP_URL:-https://botgrabber.com/download/bot-grabber.zip}"
+ZIP_URL="${BG_ZIP_URL:-https://shopgoodwillsniper.com/download/shopgoodwill-sniper.zip}"
 INSTALL_PATH="$HOME/$BG_INSTALL_DIR"
 TMP_DIR="$(mktemp -d)"
 ZIP_FILE="$TMP_DIR/app.zip"
@@ -23,19 +23,24 @@ trap cleanup EXIT
 # Detect OS and arch
 OS="$(uname -s)"
 ARCH="$(uname -m)"
+# A shell running through Rosetta reports x86_64 on Apple Silicon.
+# Select native downloads from the hardware capability instead.
+if [ "$OS" = "Darwin" ] && [ "$(/usr/sbin/sysctl -n hw.optional.arm64 2>/dev/null || true)" = "1" ]; then
+    ARCH="arm64"
+fi
 echo "Detected OS: $OS"
 echo "Detected architecture: $ARCH"
 case "$OS" in
     Darwin)
         case "$ARCH" in
-            arm64)  NODE_URL="https://nodejs.org/dist/v24.14.1/node-v24.14.1-darwin-arm64.tar.gz" ;;
-            x86_64) NODE_URL="https://nodejs.org/dist/v24.14.1/node-v24.14.1-darwin-x64.tar.gz" ;;
+            arm64)  NODE_URL="https://nodejs.org/dist/v26.10.0/node-v26.10.0-darwin-arm64.tar.gz" ;;
+            x86_64) NODE_URL="https://nodejs.org/dist/v26.10.0/node-v26.10.0-darwin-x64.tar.gz" ;;
             *) echo "Unsupported Mac architecture: $ARCH"; exit 1 ;;
         esac ;;
     Linux)
         case "$ARCH" in
-            x86_64)        NODE_URL="https://nodejs.org/dist/v24.14.1/node-v24.14.1-linux-x64.tar.xz" ;;
-            aarch64|arm64) NODE_URL="https://nodejs.org/dist/v24.14.1/node-v24.14.1-linux-arm64.tar.xz" ;;
+            x86_64)        NODE_URL="https://nodejs.org/dist/v26.10.0/node-v26.10.0-linux-x64.tar.xz" ;;
+            aarch64|arm64) NODE_URL="https://nodejs.org/dist/v26.10.0/node-v26.10.0-linux-arm64.tar.xz" ;;
             *) echo "Unsupported Linux architecture: $ARCH"; exit 1 ;;
         esac ;;
     *) echo "Unsupported OS: $OS"; exit 1 ;;
@@ -169,6 +174,11 @@ BG_PKG_NAME="$BG_PKG_NAME" BG_PRODUCT_NAME="$BG_APP_NAME" \
     "
 
 echo "Running npm install..."
+case "$ARCH" in
+    arm64|aarch64) ELECTRON_INSTALL_ARCH=arm64 ;;
+    x86_64) ELECTRON_INSTALL_ARCH=x64 ;;
+esac
+export ELECTRON_INSTALL_ARCH
 PATH="$INSTALL_PATH/node/bin:$PATH" "$INSTALL_PATH/node/bin/npm" --prefix "$INSTALL_PATH/app" install
 
 # Strip macOS quarantine from all downloaded/extracted files.

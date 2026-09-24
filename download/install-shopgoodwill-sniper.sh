@@ -267,8 +267,8 @@ PLIST
 
     cat > "$APP_PATH/Contents/MacOS/run.sh" << LAUNCHER
 #!/bin/bash
-cd "$INSTALL_PATH/app"
-NODE_ENV=production APP_LOG_LEVEL=debug "$INSTALL_PATH/node/bin/node" "$INSTALL_PATH/app/node_modules/electron/cli.js" "$INSTALL_PATH/app" >> "$INSTALL_PATH/app.log" 2>&1 &
+cd "$INSTALL_PATH/app" || exit 1
+NODE_ENV=production APP_LOG_LEVEL="\${APP_LOG_LEVEL:-info}" exec "$INSTALL_PATH/node/bin/node" "$INSTALL_PATH/app/node_modules/electron/cli.js" "$INSTALL_PATH/app"
 LAUNCHER
     chmod +x "$APP_PATH/Contents/MacOS/run.sh"
 
